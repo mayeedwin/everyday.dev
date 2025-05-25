@@ -1,0 +1,24 @@
+{
+  "name": "devbits",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run generate && vite",
+    "build": "npm run generate && tsc && vite build",
+    "generate": "node scripts/generate-site.js",
+    "preview": "npm run generate && vite preview",
+    "clean": "rm -rf dist reads",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@types/prismjs": "^1.26.5",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.0",
+    "prismjs": "^1.30.0"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "EverydayDev: Quick Site Overview",
+      "excerpt": "Quick overview of my coding journal - built for daily discoveries and breakthrough moments.",
+      "date": "2024-01-15",
+      "tags": ["showcase", "overview", "daily-reads"],
+      "readingTime": "2 min read",
+      "slug": "site-showcase"
+    },
+    {
+      "id": "2",
+      "title": "Async/Await vs Promises: The Daily Struggle",
+      "excerpt": "Why async/await makes my code cleaner and my debugging sessions shorter.",
+      "date": "2024-01-14",
+      "tags": ["javascript", "async", "promises"],
+      "readingTime": "3 min read",
+      "slug": "async-await-promises"
+    },
+    {
+      "id": "3",
+      "title": "CSS Grid: Finally Understanding the Magic",
+      "excerpt": "That moment when CSS Grid clicks and you realize you've been fighting layout for years.",
+      "date": "2024-01-13",
+      "tags": ["css", "grid", "layout"],
+      "readingTime": "4 min read",
+      "slug": "css-grid-magic"
+    },
+    {
+      "id": "4",
+      "title": "TypeScript: From Skeptic to Believer",
+      "excerpt": "How TypeScript saved me from countless runtime errors and made refactoring a joy.",
+      "date": "2024-01-12",
+      "tags": ["typescript", "javascript", "development"],
+      "readingTime": "5 min read",
+      "slug": "typescript-believer"
+    },
+    {
+      "id": "5",
+      "title": "Git Hooks: Automating the Boring Stuff",
+      "excerpt": "Setting up pre-commit hooks that actually help instead of annoying your team.",
+      "date": "2024-01-11",
+      "tags": ["git", "automation", "workflow"],
+      "readingTime": "3 min read",
+      "slug": "git-hooks-automation"
+    },
+    {
+      "id": "6",
+      "title": "Docker Compose: Local Development Paradise",
+      "excerpt": "How Docker Compose transformed my local setup from chaos to consistency.",
+      "date": "2024-01-10",
+      "tags": ["docker", "development", "devops"],
+      "readingTime": "4 min read",
+      "slug": "docker-compose-paradise"
+    },
+    {
+      "id": "7",
+      "title": "Debugging Like a Detective",
+      "excerpt": "The art of systematic debugging and why console.log isn't always the answer.",
+      "date": "2024-01-09",
+      "tags": ["debugging", "tools", "productivity"],
+      "readingTime": "6 min read",
+      "slug": "debugging-detective"
+    },
+    {
+      "id": "8",
+      "title": "Clean Code: The 15-Minute Rule",
+      "excerpt": "If you can't explain your code in 15 minutes, it's probably too complex.",
+      "date": "2024-01-08",
+      "tags": ["clean-code", "best-practices", "refactoring"],
+      "readingTime": "4 min read",
+      "slug": "clean-code-fifteen-minutes"
+    }
+  ]
+}
