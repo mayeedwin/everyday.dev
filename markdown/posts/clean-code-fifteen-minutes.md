@@ -1,7 +1,3 @@
-# Clean Code: The 15-Minute Rule
-
-If you can't explain your code in 15 minutes, it's probably too complex.
-
 ## The Rule
 
 Every function, class, or module should be explainable to a colleague in 15 minutes or less.
@@ -15,11 +11,11 @@ Every function, class, or module should be explainable to a colleague in 15 minu
 ## Bad Example
 
 ```javascript
-function processUserDataAndGenerateReportWithFiltering(
+const processUserDataAndGenerateReportWithFiltering = (
   users,
   filters,
   options
-) {
+) => {
   // 200 lines of nested logic
   // Multiple responsibilities
   // Unclear dependencies
@@ -30,7 +26,7 @@ function processUserDataAndGenerateReportWithFiltering(
 ## Good Example
 
 ```javascript
-function generateUserReport(users, filters) {
+const generateUserReport = (users, filters) => {
   const filteredUsers = filterUsers(users, filters);
   const reportData = transformForReport(filteredUsers);
   return formatReport(reportData);

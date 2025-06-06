@@ -14,6 +14,8 @@ export interface TemplateData {
   title: string;
   excerpt: string;
   date: string;
+  dateISO: string;
   readingTime: string;
   content: string;
+  slug: string;
 }
