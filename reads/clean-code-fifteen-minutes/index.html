@@ -6,12 +6,10 @@
     <meta name="description" content="If you can't explain your code in 15 minutes, it's probably too complex." />
     <meta name="author" content="Maye" />
     
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Clean Code: The 15-Minute Rule" />
     <meta property="og:description" content="If you can't explain your code in 15 minutes, it's probably too complex." />
     
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="Clean Code: The 15-Minute Rule" />
     <meta property="twitter:description" content="If you can't explain your code in 15 minutes, it's probably too complex." />
@@ -23,7 +21,6 @@
     <link rel="stylesheet" href="/src/styles/main.css" />
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <nav class="nav">
             <div class="nav-container">
@@ -41,7 +38,6 @@
     </header>
 
     <div class="app-container">
-        <!-- Left Sidebar - Profile -->
         <aside class="profile-sidebar">
             <div class="profile-content">
                 <div class="profile-avatar">
@@ -86,9 +82,7 @@
             </div>
         </aside>
         
-        <!-- Right Content Area -->
         <main class="content-area">
-            <!-- Sticky navigation bar -->
             <nav class="sticky-nav">
                 <div class="sticky-nav-content">
                     <a href="/" class="back-link">
@@ -104,12 +98,11 @@
                 </div>
             </nav>
 
-            <!-- Blog post content -->
             <article class="blog-post">
                 <header class="post-header">
                     <div class="post-meta">
                         <time class="post-date">January 8, 2024</time>
-                        <span class="post-reading-time">4 min read</span>
+                        <span class="post-reading-time">1 min read</span>
                     </div>
                     <h1 class="post-title">Clean Code: The 15-Minute Rule</h1>
                     <p class="post-excerpt">If you can't explain your code in 15 minutes, it's probably too complex.</p>
@@ -127,7 +120,11 @@
 <li><strong>Documentation test</strong> - If you can’t explain it, how will you document it?</li>
 </ul>
 <h2>Bad Example</h2>
-<pre><code class="language-javascript"><div class="code-block-container"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">processUserDataAndGenerateReportWithFiltering</span><span class="token punctuation">(</span><span class="token parameter">users<span class="token punctuation">,</span> filters<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre><code class="language-javascript"><div class="code-block-container"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">processUserDataAndGenerateReportWithFiltering</span><span class="token punctuation">(</span>
+  <span class="token parameter">users<span class="token punctuation">,</span>
+  filters<span class="token punctuation">,</span>
+  options</span>
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">// 200 lines of nested logic</span>
   <span class="token comment">// Multiple responsibilities</span>
   <span class="token comment">// Unclear dependencies</span>
@@ -161,12 +158,11 @@
 
     <script type="module" src="/src/main.ts"></script>
     <script>
-        // Disable Prism auto-highlighting since we already processed code blocks
         window.Prism = window.Prism || {};
         window.Prism.manual = true;
     </script>
     <script>
-        function copyCode(button) {
+        const copyCode = (button) => {
             const codeBlock = button.parentElement.querySelector('code');
             const text = codeBlock.textContent;
             
@@ -180,7 +176,6 @@
                     button.classList.remove('copied');
                 }, 2000);
             }).catch(() => {
-                // Fallback for older browsers
                 const textArea = document.createElement('textarea');
                 textArea.value = text;
                 document.body.appendChild(textArea);

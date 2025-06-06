@@ -1,30 +1,34 @@
-import fs from 'fs/promises'
-import path from 'path'
-import { fileURLToPath } from 'url'
-import MarkdownIt from 'markdown-it'
-import Prism from 'prismjs'
+import { promises as fs } from "fs";
+import { resolve, join } from "path";
+import { fileURLToPath } from "url";
+import MarkdownIt from "markdown-it";
+import Prism from "prismjs";
+import type { Post, PostsData, TemplateData } from "./index.models.js";
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-const rootDir = path.resolve(__dirname, '..')
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = resolve(__filename, "..");
+const rootDir = resolve(__dirname, "..");
+
+const WORDS_PER_MINUTE = 200;
+const CURRENT_YEAR = new Date().getFullYear();
 
 const md = new MarkdownIt({
   html: true,
   linkify: true,
   typographer: true,
-  highlight: function (str, lang) {
+  highlight: (str: string, lang: string): string => {
     if (lang && Prism.languages[lang]) {
       try {
-        const highlighted = Prism.highlight(str, Prism.languages[lang], lang)
-        return `<div class="code-block-container"><pre class="language-${lang}"><code>${highlighted}</code></pre><button class="copy-button" onclick="copyCode(this)">Copy</button></div>`
-      } catch (__) {}
+        const highlighted = Prism.highlight(str, Prism.languages[lang], lang);
+        return `<div class="code-block-container"><pre class="language-${lang}"><code>${highlighted}</code></pre><button class="copy-button" onclick="copyCode(this)">Copy</button></div>`;
+      } catch {
+      }
     }
-    const escaped = md.utils.escapeHtml(str)
-    return `<div class="code-block-container"><pre class="language-text"><code>${escaped}</code></pre><button class="copy-button" onclick="copyCode(this)">Copy</button></div>`
+    const escaped = md.utils.escapeHtml(str);
+    return `<div class="code-block-container"><pre class="language-text"><code>${escaped}</code></pre><button class="copy-button" onclick="copyCode(this)">Copy</button></div>`;
   }
-})
+});
 
-// Blog post template
 const blogTemplate = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,12 +37,10 @@ const blogTemplate = `<!DOCTYPE html>
     <meta name="description" content="{{excerpt}}" />
     <meta name="author" content="Maye" />
     
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{title}}" />
     <meta property="og:description" content="{{excerpt}}" />
     
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="{{title}}" />
     <meta property="twitter:description" content="{{excerpt}}" />
@@ -50,7 +52,6 @@ const blogTemplate = `<!DOCTYPE html>
     <link rel="stylesheet" href="/src/styles/main.css" />
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <nav class="nav">
             <div class="nav-container">
@@ -68,7 +69,6 @@ const blogTemplate = `<!DOCTYPE html>
     </header>
 
     <div class="app-container">
-        <!-- Left Sidebar - Profile -->
         <aside class="profile-sidebar">
             <div class="profile-content">
                 <div class="profile-avatar">
@@ -108,14 +108,12 @@ const blogTemplate = `<!DOCTYPE html>
                 </div>
                 
                 <div class="profile-copyright">
-                    © ${new Date().getFullYear()} Maye. All rights reserved.
+                    © ${CURRENT_YEAR} Maye. All rights reserved.
                 </div>
             </div>
         </aside>
         
-        <!-- Right Content Area -->
         <main class="content-area">
-            <!-- Sticky navigation bar -->
             <nav class="sticky-nav">
                 <div class="sticky-nav-content">
                     <a href="/" class="back-link">
@@ -131,7 +129,6 @@ const blogTemplate = `<!DOCTYPE html>
                 </div>
             </nav>
 
-            <!-- Blog post content -->
             <article class="blog-post">
                 <header class="post-header">
                     <div class="post-meta">
@@ -151,12 +148,11 @@ const blogTemplate = `<!DOCTYPE html>
 
     <script type="module" src="/src/main.ts"></script>
     <script>
-        // Disable Prism auto-highlighting since we already processed code blocks
         window.Prism = window.Prism || {};
         window.Prism.manual = true;
     </script>
     <script>
-        function copyCode(button) {
+        const copyCode = (button) => {
             const codeBlock = button.parentElement.querySelector('code');
             const text = codeBlock.textContent;
             
@@ -170,7 +166,6 @@ const blogTemplate = `<!DOCTYPE html>
                     button.classList.remove('copied');
                 }, 2000);
             }).catch(() => {
-                // Fallback for older browsers
                 const textArea = document.createElement('textarea');
                 textArea.value = text;
                 document.body.appendChild(textArea);
@@ -190,9 +185,8 @@ const blogTemplate = `<!DOCTYPE html>
         }
     </script>
 </body>
-</html>`
+</html>` as const;
 
-// Homepage template
 const homepageTemplate = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -201,12 +195,10 @@ const homepageTemplate = `<!DOCTYPE html>
     <meta name="description" content="EverydayDev - A coding journal with good vibes only. Daily discoveries, late-night breakthroughs, and lessons for developers." />
     <meta name="author" content="Maye" />
     
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="EverydayDev - Coding Journal" />
     <meta property="og:description" content="A coding journal with good vibes only. Daily discoveries, late-night breakthroughs, and lessons for developers." />
     
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="EverydayDev - Coding Journal" />
     <meta property="twitter:description" content="A coding journal with good vibes only. Daily discoveries, late-night breakthroughs, and lessons for developers." />
@@ -218,7 +210,6 @@ const homepageTemplate = `<!DOCTYPE html>
     <link rel="stylesheet" href="/src/styles/main.css" />
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <nav class="nav">
             <div class="nav-container">
@@ -236,7 +227,6 @@ const homepageTemplate = `<!DOCTYPE html>
     </header>
 
     <div class="app-container">
-        <!-- Left Sidebar - Profile -->
         <aside class="profile-sidebar">
             <div class="profile-content">
                 <div class="profile-avatar">
@@ -276,12 +266,11 @@ const homepageTemplate = `<!DOCTYPE html>
                 </div>
                 
                 <div class="profile-copyright">
-                    © ${new Date().getFullYear()} Maye. All rights reserved.
+                    © ${CURRENT_YEAR} Maye. All rights reserved.
                 </div>
             </div>
         </aside>
         
-        <!-- Right Content Area -->
         <main class="content-area">
             <div class="home-content">
                 <section class="welcome-section">
@@ -300,65 +289,41 @@ const homepageTemplate = `<!DOCTYPE html>
 
     <script type="module" src="/src/main.ts"></script>
     <script>
-        // Disable Prism auto-highlighting since we already processed code blocks
         window.Prism = window.Prism || {};
         window.Prism.manual = true;
     </script>
 </body>
-</html>`
+</html>` as const;
 
-function formatDate(dateString) {
-  const date = new Date(dateString)
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
-}
+const formatDate = (dateString: string): string => {
+  const date = new Date(dateString);
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  }).format(date);
+};
 
-function calculateReadingTime(content) {
-  const wordsPerMinute = 200
-  const words = content.trim().split(/\s+/).length
-  const minutes = Math.ceil(words / wordsPerMinute)
-  return `${minutes} min read`
-}
+const calculateReadingTime = (content: string): string => {
+  const words = content.trim().split(/\s+/).length;
+  const minutes = Math.ceil(words / WORDS_PER_MINUTE);
+  return `${minutes} min read`;
+};
 
-async function generateSite() {
-  try {
-    console.log('🚀 Generating static site...')
+const replaceTemplateVariables = (
+  template: string,
+  data: TemplateData
+): string => {
+  return template
+    .replace(/{{title}}/g, data.title)
+    .replace(/{{excerpt}}/g, data.excerpt)
+    .replace(/{{date}}/g, data.date)
+    .replace(/{{readingTime}}/g, data.readingTime)
+    .replace(/{{content}}/g, data.content);
+};
 
-    // Read posts.json
-    const postsData = await fs.readFile(path.join(rootDir, 'public/posts/posts.json'), 'utf-8')
-    const { posts } = JSON.parse(postsData)
-
-    // Generate individual blog post pages
-    for (const post of posts) {
-      // Read markdown content
-      const markdownPath = path.join(rootDir, 'public/posts', `${post.slug}.md`)
-      const markdownContent = await fs.readFile(markdownPath, 'utf-8')
-      
-      // Convert markdown to HTML
-      const htmlContent = md.render(markdownContent)
-      
-      // Create post directory
-      const postDir = path.join(rootDir, 'reads', post.slug)
-      await fs.mkdir(postDir, { recursive: true })
-
-      // Generate HTML from template
-      const html = blogTemplate
-        .replace(/{{title}}/g, post.title)
-        .replace(/{{excerpt}}/g, post.excerpt)
-        .replace(/{{date}}/g, formatDate(post.date))
-        .replace(/{{readingTime}}/g, post.readingTime)
-        .replace(/{{content}}/g, htmlContent)
-
-      // Write the HTML file
-      await fs.writeFile(path.join(postDir, 'index.html'), html)
-    }
-
-    // Generate homepage with post list
-    const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date))
-    const postsHTML = sortedPosts.map(post => `
+const generatePostHTML = (post: Post): string => {
+  const postCard = `
       <article class="post-card">
         <div class="post-meta">
           <time class="post-date">${formatDate(post.date)}</time>
@@ -373,22 +338,65 @@ async function generateSite() {
           </a>
         </div>
       </article>
-    `).join('')
+    `;
+  return postCard;
+};
 
-    const homepageHTML = homepageTemplate.replace('{{posts}}', postsHTML)
-    await fs.writeFile(path.join(rootDir, 'index.html'), homepageHTML)
+const generateSite = async (): Promise<void> => {
+  try {
+    console.log("🚀 Generating static site...");
 
-    console.log(`✅ Generated ${posts.length} blog posts + homepage`)
-    console.log('📝 Generated files:')
-    console.log('   - index.html (homepage)')
-    posts.forEach(post => {
-      console.log(`   - reads/${post.slug}/index.html`)
-    })
+    const postsData = await fs.readFile(
+      join(rootDir, "markdown/posts.json"),
+      "utf-8"
+    );
+    const { posts }: PostsData = JSON.parse(postsData);
 
+    for (const post of posts) {
+      try {
+        const markdownPath = join(rootDir, "markdown/posts", `${post.slug}.md`);
+        const markdownContent = await fs.readFile(markdownPath, "utf-8");
+
+        const htmlContent = md.render(markdownContent);
+
+        const postDir = join(rootDir, "reads", post.slug);
+        await fs.mkdir(postDir, { recursive: true });
+
+        const templateData: TemplateData = {
+          title: post.title,
+          excerpt: post.excerpt,
+          date: formatDate(post.date),
+          readingTime: calculateReadingTime(markdownContent),
+          content: htmlContent
+        };
+
+        const html = replaceTemplateVariables(blogTemplate, templateData);
+
+        await fs.writeFile(join(postDir, "index.html"), html);
+      } catch (error) {
+        console.error(`❌ Error generating post ${post.slug}:`, error);
+        continue;
+      }
+    }
+
+    const sortedPosts = posts.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+    const postsHTML = sortedPosts.map(generatePostHTML).join("");
+
+    const homepageHTML = homepageTemplate.replace("{{posts}}", postsHTML);
+    await fs.writeFile(join(rootDir, "index.html"), homepageHTML);
+
+    console.log(`✅ Generated ${posts.length} blog posts + homepage`);
+    console.log("📝 Generated files:");
+    console.log("   - index.html (homepage)");
+    posts.forEach((post) => {
+      console.log(`   - reads/${post.slug}/index.html`);
+    });
   } catch (error) {
-    console.error('❌ Error generating site:', error)
-    process.exit(1)
+    console.error("❌ Error generating site:", error);
+    process.exit(1);
   }
-}
+};
 
-generateSite()
+generateSite();

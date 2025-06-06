@@ -1,19 +1,21 @@
 {
-  "name": "devbits",
+  "name": "everydaydev",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "npm run generate && vite",
     "build": "npm run generate && tsc && vite build",
-    "generate": "node scripts/generate-site.js",
+    "generate": "tsx generator/index.ts",
     "preview": "npm run generate && vite preview",
     "clean": "rm -rf dist reads",
     "start": "npm run dev"
   },
   "devDependencies": {
     "@types/markdown-it": "^14.1.2",
+    "@types/node": "^22.15.30",
     "@types/prismjs": "^1.26.5",
+    "tsx": "^4.19.4",
     "typescript": "~5.8.3",
     "vite": "^6.3.5"
   },

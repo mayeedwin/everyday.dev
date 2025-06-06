@@ -6,12 +6,10 @@
     <meta name="description" content="Quick overview of my coding journal - built for daily discoveries and breakthrough moments." />
     <meta name="author" content="Maye" />
     
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article" />
     <meta property="og:title" content="EverydayDev: Quick Site Overview" />
     <meta property="og:description" content="Quick overview of my coding journal - built for daily discoveries and breakthrough moments." />
     
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="EverydayDev: Quick Site Overview" />
     <meta property="twitter:description" content="Quick overview of my coding journal - built for daily discoveries and breakthrough moments." />
@@ -23,7 +21,6 @@
     <link rel="stylesheet" href="/src/styles/main.css" />
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <nav class="nav">
             <div class="nav-container">
@@ -41,7 +38,6 @@
     </header>
 
     <div class="app-container">
-        <!-- Left Sidebar - Profile -->
         <aside class="profile-sidebar">
             <div class="profile-content">
                 <div class="profile-avatar">
@@ -86,9 +82,7 @@
             </div>
         </aside>
         
-        <!-- Right Content Area -->
         <main class="content-area">
-            <!-- Sticky navigation bar -->
             <nav class="sticky-nav">
                 <div class="sticky-nav-content">
                     <a href="/" class="back-link">
@@ -104,7 +98,6 @@
                 </div>
             </nav>
 
-            <!-- Blog post content -->
             <article class="blog-post">
                 <header class="post-header">
                     <div class="post-meta">
@@ -189,12 +182,11 @@ npm run dev
 
     <script type="module" src="/src/main.ts"></script>
     <script>
-        // Disable Prism auto-highlighting since we already processed code blocks
         window.Prism = window.Prism || {};
         window.Prism.manual = true;
     </script>
     <script>
-        function copyCode(button) {
+        const copyCode = (button) => {
             const codeBlock = button.parentElement.querySelector('code');
             const text = codeBlock.textContent;
             
@@ -208,7 +200,6 @@ npm run dev
                     button.classList.remove('copied');
                 }, 2000);
             }).catch(() => {
-                // Fallback for older browsers
                 const textArea = document.createElement('textarea');
                 textArea.value = text;
                 document.body.appendChild(textArea);

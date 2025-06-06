@@ -6,7 +6,7 @@ import { fileURLToPath } from "url";
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 // Read posts.json to get all blog post slugs
-const postsJsonPath = resolve(__dirname, "public/posts/posts.json");
+const postsJsonPath = resolve(__dirname, "markdown/posts.json");
 let input: Record<string, string> = {
   main: resolve(__dirname, "index.html")
 };
