@@ -15,7 +15,11 @@ Every function, class, or module should be explainable to a colleague in 15 minu
 ## Bad Example
 
 ```javascript
-function processUserDataAndGenerateReportWithFiltering(users, filters, options) {
+function processUserDataAndGenerateReportWithFiltering(
+  users,
+  filters,
+  options
+) {
   // 200 lines of nested logic
   // Multiple responsibilities
   // Unclear dependencies

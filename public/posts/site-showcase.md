@@ -4,13 +4,14 @@ Welcome to my coding journal! This is where I document daily discoveries, late-n
 
 ## What Powers This Site
 
-⚡ **Lightning-fast** - Vite + TypeScript + Static generation  
-🎨 **Clean design** - Responsive, readable, smooth  
-🔥 **Code highlighting** - Beautiful syntax colors with copy buttons  
+⚡ **Lightning-fast** - Vite + TypeScript + Static generation
+🎨 **Clean design** - Responsive, readable, smooth
+🔥 **Code highlighting** - Beautiful syntax colors with copy buttons
 
 ## Code Examples
 
 ### JavaScript
+
 ```javascript
 // Modern async/await pattern
 const fetchData = async (id) => {
@@ -18,13 +19,14 @@ const fetchData = async (id) => {
     const response = await fetch(`/api/data/${id}`);
     return await response.json();
   } catch (error) {
-    console.error('Fetch failed:', error);
+    console.error("Fetch failed:", error);
     throw error;
   }
 };
 ```
 
 ### CSS
+
 ```css
 /* Custom properties for theming */
 :root {
@@ -43,6 +45,7 @@ const fetchData = async (id) => {
 ```
 
 ### Python
+
 ```python
 # Quick data processing
 from dataclasses import dataclass
@@ -78,4 +81,4 @@ That's it! Ready to document your coding journey.
 
 ---
 
-*Built for developers who value speed, simplicity, and good vibes.*
+_Built for developers who value speed, simplicity, and good vibes._
