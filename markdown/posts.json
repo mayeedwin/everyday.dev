@@ -2,18 +2,9 @@
   "posts": [
     {
       "id": "1",
-      "title": "EverydayDev: Quick Site Overview",
-      "excerpt": "Quick overview of my coding journal - built for daily discoveries and breakthrough moments.",
-      "date": "2024-01-15",
-      "tags": ["showcase", "overview", "daily-reads"],
-      "readingTime": "2 min read",
-      "slug": "site-showcase"
-    },
-    {
-      "id": "8",
       "title": "Clean Code: The 15-Minute Rule",
       "excerpt": "If you can't explain your code in 15 minutes, it's probably too complex.",
-      "date": "2024-01-08",
+      "date": "2025-06-07",
       "tags": ["clean-code", "best-practices", "refactoring"],
       "readingTime": "4 min read",
       "slug": "clean-code-fifteen-minutes"

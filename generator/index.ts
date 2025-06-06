@@ -346,6 +346,12 @@ const generateSite = async (): Promise<void> => {
   try {
     console.log("🚀 Generating static site...");
 
+    const readsDir = join(rootDir, "reads");
+    try {
+      await fs.rm(readsDir, { recursive: true, force: true });
+    } catch {
+    }
+
     const postsData = await fs.readFile(
       join(rootDir, "markdown/posts.json"),
       "utf-8"
