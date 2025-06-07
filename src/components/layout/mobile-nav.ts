@@ -20,6 +20,14 @@ export class MobileNav {
   }
 
   private init(): void {
+    // Ensure sidebar starts hidden
+    const { sidebar, overlay } = this.elements;
+    if (sidebar && overlay) {
+      sidebar.classList.add('hidden');
+      sidebar.classList.remove('show');
+      overlay.classList.add('hidden');
+      overlay.classList.remove('show');
+    }
     this.bindEvents();
   }
 
@@ -29,14 +37,17 @@ export class MobileNav {
     if (!toggle || !sidebar || !overlay) return;
 
     // Toggle button click
-    toggle.addEventListener('click', () => this.toggle());
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.toggle();
+    });
 
     // Overlay click to close
     overlay.addEventListener('click', () => this.close());
 
     // Escape key to close
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+      if (e.key === 'Escape' && sidebar.classList.contains('show')) {
         this.close();
       }
     });
@@ -45,8 +56,10 @@ export class MobileNav {
   public toggle(): void {
     const { sidebar } = this.elements;
     if (!sidebar) return;
-
-    if (sidebar.classList.contains('active')) {
+    
+    const isVisible = sidebar.classList.contains('show');
+    
+    if (isVisible) {
       this.close();
     } else {
       this.open();
@@ -57,8 +70,10 @@ export class MobileNav {
     const { toggle, sidebar, overlay } = this.elements;
     if (!toggle || !sidebar || !overlay) return;
 
-    sidebar.classList.add('active');
-    overlay.classList.add('active');
+    sidebar.classList.remove('hidden');
+    sidebar.classList.add('show');
+    overlay.classList.remove('hidden');
+    overlay.classList.add('show');
     toggle.classList.add('active');
     
     // Prevent body scroll
@@ -69,8 +84,10 @@ export class MobileNav {
     const { toggle, sidebar, overlay } = this.elements;
     if (!toggle || !sidebar || !overlay) return;
 
-    sidebar.classList.remove('active');
-    overlay.classList.remove('active');
+    sidebar.classList.remove('show');
+    sidebar.classList.add('hidden');
+    overlay.classList.remove('show');
+    overlay.classList.add('hidden');
     toggle.classList.remove('active');
     
     // Restore body scroll
