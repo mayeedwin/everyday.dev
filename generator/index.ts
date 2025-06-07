@@ -536,14 +536,14 @@ const generateSite = async (): Promise<void> => {
     } catch {}
 
     const postsData = await fs.readFile(
-      join(rootDir, "src/data/posts.json"),
+      join(rootDir, "markdown/posts.json"),
       "utf-8"
     );
     const { posts }: PostsData = JSON.parse(postsData);
 
     for (const post of posts) {
       try {
-        const markdownPath = join(rootDir, "markdown/posts", `${post.slug}.md`);
+        const markdownPath = join(rootDir, "markdown", `${post.slug}.md`);
         const markdownContent = await fs.readFile(markdownPath, "utf-8");
 
         const htmlContent = md.render(markdownContent);

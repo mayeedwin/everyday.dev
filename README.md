@@ -29,8 +29,7 @@ everyday.dev/
 │   └── index.models.ts    # TypeScript interfaces
 ├── markdown/              # Content source
 │   ├── posts.json         # Post metadata
-│   └── posts/             # Markdown files
-│       └── clean-code-fifteen-minutes.md
+│   └── clean-code-fifteen-minutes.md  # Markdown files
 ├── src/                   # Frontend assets & utilities
 │   ├── styles/
 │   │   ├── main.css       # Main stylesheet with CSS variables
@@ -55,10 +54,10 @@ everyday.dev/
 
 ### 1. Create the Markdown File
 
-Add your new post to `markdown/posts/`:
+Add your new post to `markdown/`:
 
 ```bash
-touch markdown/posts/my-new-post.md
+touch markdown/my-new-post.md
 ```
 
 Write your content in markdown:
@@ -136,6 +135,7 @@ Update `speaking/speaking.json` with your talk details:
 ```
 
 The speaking page automatically:
+
 - Displays talks in a clean, card-based layout
 - Shows metadata like date, type, and audience size
 - Includes topic tags and action links
