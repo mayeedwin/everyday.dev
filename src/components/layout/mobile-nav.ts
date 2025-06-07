@@ -23,9 +23,7 @@ export class MobileNav {
     // Ensure sidebar starts hidden
     const { sidebar, overlay } = this.elements;
     if (sidebar && overlay) {
-      sidebar.classList.add('hidden');
       sidebar.classList.remove('show');
-      overlay.classList.add('hidden');
       overlay.classList.remove('show');
     }
     this.bindEvents();
@@ -70,9 +68,7 @@ export class MobileNav {
     const { toggle, sidebar, overlay } = this.elements;
     if (!toggle || !sidebar || !overlay) return;
 
-    sidebar.classList.remove('hidden');
     sidebar.classList.add('show');
-    overlay.classList.remove('hidden');
     overlay.classList.add('show');
     toggle.classList.add('active');
     
@@ -85,9 +81,7 @@ export class MobileNav {
     if (!toggle || !sidebar || !overlay) return;
 
     sidebar.classList.remove('show');
-    sidebar.classList.add('hidden');
     overlay.classList.remove('show');
-    overlay.classList.add('hidden');
     toggle.classList.remove('active');
     
     // Restore body scroll
