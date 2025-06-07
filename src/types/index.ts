@@ -11,4 +11,5 @@ export interface UIElements {
   toggle: HTMLElement | null;
   sidebar: HTMLElement | null;
   overlay: HTMLElement | null;
+  closeBtn?: HTMLElement | null;
 }

@@ -15,7 +15,8 @@ export class MobileNav {
     return {
       toggle: document.querySelector('.mobile-nav-toggle'),
       sidebar: document.querySelector('.profile-sidebar'),
-      overlay: document.querySelector('.sidebar-overlay')
+      overlay: document.querySelector('.sidebar-overlay'),
+      closeBtn: document.querySelector('.sidebar-close-btn')
     };
   }
 
@@ -30,7 +31,7 @@ export class MobileNav {
   }
 
   private bindEvents(): void {
-    const { toggle, sidebar, overlay } = this.elements;
+    const { toggle, sidebar, overlay, closeBtn } = this.elements;
     
     if (!toggle || !sidebar || !overlay) return;
 
@@ -42,6 +43,11 @@ export class MobileNav {
 
     // Overlay click to close
     overlay.addEventListener('click', () => this.close());
+
+    // Close button click
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => this.close());
+    }
 
     // Escape key to close
     document.addEventListener('keydown', (e) => {
