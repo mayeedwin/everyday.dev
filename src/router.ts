@@ -5,36 +5,36 @@ interface RouteData {
 }
 
 class Router {
-  private cache = new Map<string, RouteData>();
-  private currentPath = "";
-  private isLoading = false;
+  private _cache = new Map<string, RouteData>();
+  private _currentPath = "";
+  private _isLoading = false;
 
   constructor() {
-    this.init();
+    this._init();
   }
 
-  private init() {
+  private _init() {
     // Handle browser back/forward
-    window.addEventListener("popstate", this.handlePopState.bind(this));
+    window.addEventListener("popstate", this._handlePopState.bind(this));
 
     // Intercept link clicks
-    document.addEventListener("click", this.handleClick.bind(this));
+    document.addEventListener("click", this._handleClick.bind(this));
 
     // Handle initial page load
-    this.currentPath = window.location.pathname;
+    this._currentPath = window.location.pathname;
   }
 
-  private handleClick = (e: MouseEvent) => {
+  private _handleClick = (e: MouseEvent) => {
     const target = e.target as HTMLElement;
     const link = target.closest("a");
 
-    if (!link || !this.isInternalLink(link)) return;
+    if (!link || !this._isInternalLink(link)) return;
 
     e.preventDefault();
     this.navigateTo(link.href);
   };
 
-  private isInternalLink(link: HTMLAnchorElement): boolean {
+  private _isInternalLink(link: HTMLAnchorElement): boolean {
     return (
       link.hostname === window.location.hostname &&
       !link.hasAttribute("target") &&
@@ -43,46 +43,46 @@ class Router {
     );
   }
 
-  private handlePopState = () => {
+  private _handlePopState = () => {
     const path = window.location.pathname;
-    this.loadPage(path, false);
+    this._loadPage(path, false);
   };
 
   async navigateTo(url: string) {
     const path = new URL(url).pathname;
 
-    if (path === this.currentPath) return;
+    if (path === this._currentPath) return;
 
-    await this.loadPage(path, true);
+    await this._loadPage(path, true);
   }
 
-  private async loadPage(path: string, pushState: boolean = true) {
-    if (this.isLoading) return;
+  private async _loadPage(path: string, pushState: boolean = true) {
+    if (this._isLoading) return;
 
-    this.isLoading = true;
-    this.showLoading();
+    this._isLoading = true;
+    this._showLoading();
 
     try {
-      let routeData = this.cache.get(path);
+      let routeData = this._cache.get(path);
 
       if (!routeData) {
-        routeData = await this.fetchPage(path);
-        this.cache.set(path, routeData);
+        routeData = await this._fetchPage(path);
+        this._cache.set(path, routeData);
       }
 
-      this.updatePage(routeData, pushState);
-      this.currentPath = path;
+      this._updatePage(routeData, pushState);
+      this._currentPath = path;
     } catch (error) {
       console.error("Navigation error:", error);
       // Fallback to traditional navigation
       window.location.href = path;
     } finally {
-      this.isLoading = false;
-      this.hideLoading();
+      this._isLoading = false;
+      this._hideLoading();
     }
   }
 
-  private async fetchPage(path: string): Promise<RouteData> {
+  private async _fetchPage(path: string): Promise<RouteData> {
     const response = await fetch(path);
 
     if (!response.ok) {
@@ -107,7 +107,7 @@ class Router {
     };
   }
 
-  private updatePage(routeData: RouteData, pushState: boolean) {
+  private _updatePage(routeData: RouteData, pushState: boolean) {
     // Update content area
     const contentArea = document.querySelector(".content-area");
     if (contentArea) {
@@ -130,10 +130,10 @@ class Router {
     window.scrollTo(0, 0);
 
     // Re-initialize any JavaScript for the new content
-    this.initializePageScripts();
+    this._initializePageScripts();
   }
 
-  private initializePageScripts() {
+  private _initializePageScripts() {
     // Re-add copy buttons to code blocks
     const codeBlocks = document.querySelectorAll("pre");
     codeBlocks.forEach((block) => {
@@ -163,7 +163,7 @@ class Router {
     });
   }
 
-  private showLoading() {
+  private _showLoading() {
     const contentArea = document.querySelector(".content-area") as HTMLElement;
     if (contentArea) {
       contentArea.style.opacity = "0.7";
@@ -175,7 +175,7 @@ class Router {
     document.body.classList.add("router-loading");
   }
 
-  private hideLoading() {
+  private _hideLoading() {
     const contentArea = document.querySelector(".content-area") as HTMLElement;
     if (contentArea) {
       contentArea.style.opacity = "1";
@@ -188,10 +188,10 @@ class Router {
 
   // Preload page on hover
   preloadPage(path: string) {
-    if (!this.cache.has(path) && !this.isLoading) {
-      this.fetchPage(path)
+    if (!this._cache.has(path) && !this._isLoading) {
+      this._fetchPage(path)
         .then((routeData) => {
-          this.cache.set(path, routeData);
+          this._cache.set(path, routeData);
         })
         .catch(() => {
           // Silently fail preloading
