@@ -148,11 +148,13 @@
   color: #4b5563;
   font-size: 0.95rem;
   font-family: "Inter", sans-serif;
+  padding-bottom: 0;
 }
 
 .post-actions {
   display: flex;
   justify-content: flex-start;
+  margin-top: 0.5rem;
 }
 
 .read-more {
@@ -224,7 +226,6 @@
 }
 
 .post-body p {
-  padding-bottom: var(--spacing-xl);
   color: var(--color-tertiary);
   font-size: var(--font-size-base);
 }

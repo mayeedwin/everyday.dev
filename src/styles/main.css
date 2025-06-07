@@ -197,7 +197,6 @@ h3 {
 }
 
 p {
-  padding-bottom: var(--spacing-lg);
   color: var(--color-tertiary);
   font-size: var(--font-size-base);
 }
@@ -377,7 +376,7 @@ pre {
   font-size: 0.7rem;
   font-weight: 500;
   border: 1px solid rgba(55, 65, 81, 0.3);
-  font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Google Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   transition: all 0.2s ease;
@@ -476,7 +475,6 @@ pre {
 .router-loading * {
   cursor: wait !important;
 }
-
 
 /* Mobile Navigation Toggle */
 .nav-toggle {
@@ -630,7 +628,6 @@ pre {
     background-position: 200% 0;
   }
 }
-
 
 /* Avatar loading state */
 .avatar-img.loading {
@@ -827,11 +824,11 @@ button:focus,
     --color-background: #ffffff;
     --color-border: #000000;
   }
-  
+
   .gde-badge {
     border: 2px solid var(--color-primary);
   }
-  
+
   .social-link {
     border: 1px solid var(--color-primary);
   }
@@ -862,7 +859,7 @@ button:focus,
     overflow-x: hidden;
     height: 100%;
   }
-  
+
   body {
     overflow-x: hidden;
     height: 100%;
@@ -951,7 +948,6 @@ button:focus,
     z-index: 1;
   }
 
-
   /* Mobile typography and spacing */
   .mobile-avatar {
     width: 36px;
@@ -997,7 +993,6 @@ button:focus,
     width: 14px;
     height: 14px;
   }
-
 
   /* Profile layout optimization */
   .profile-content {
@@ -1097,5 +1092,4 @@ button:focus,
     font-size: 12pt;
     line-height: 1.4;
   }
-
 }
