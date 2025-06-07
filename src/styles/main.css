@@ -244,6 +244,9 @@ pre {
   letter-spacing: 0.05em;
   transition: color 0.3s ease;
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .nav-link:hover {
@@ -255,15 +258,6 @@ pre {
   font-weight: 600;
 }
 
-.nav-link.active::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: #000000;
-}
 
 .app-container {
   max-width: 1512px;
@@ -412,6 +406,12 @@ pre {
   display: none;
 }
 
+.profile-nav .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .profile-social {
   display: flex;
   gap: 0.75rem;
@@ -545,28 +545,23 @@ pre {
 
 .talk-date {
   font-size: var(--font-size-xs);
-  color: var(--color-muted);
-  font-weight: 600;
+  color: var(--color-primary);
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-}
-
-.talk-type {
-  background: var(--color-primary);
-  color: var(--color-background);
-  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-background);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--radius-sm);
-  font-size: var(--font-size-xs);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  display: inline-block;
   width: fit-content;
 }
 
+
 .talk-location {
   font-size: var(--font-size-xs);
-  color: var(--color-light);
-  font-weight: 500;
+  color: var(--color-secondary);
+  font-weight: 600;
 }
 
 .talk-content {
@@ -589,17 +584,6 @@ pre {
   overflow: hidden;
 }
 
-.talk-event {
-  font-size: var(--font-size-sm);
-  color: var(--color-secondary);
-  font-weight: 500;
-  margin-bottom: var(--spacing-sm);
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
 
 .talk-description {
   font-size: var(--font-size-sm);
@@ -1249,9 +1233,6 @@ button:focus,
     line-clamp: 3;
   }
 
-  .talk-event {
-    font-size: var(--font-size-xs);
-  }
 
   .talk-description {
     -webkit-line-clamp: 3;

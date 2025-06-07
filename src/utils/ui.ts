@@ -23,6 +23,7 @@ export class UIManager {
   private init(): void {
     this.initSidebarToggle();
     this.initCopyButtons();
+    this.initPostCardNavigation();
   }
 
   /**
@@ -175,11 +176,72 @@ export class UIManager {
   }
 
   /**
+   * Initialize post card navigation functionality
+   */
+  private initPostCardNavigation(): void {
+    const postCards = document.querySelectorAll('.post-card');
+    
+    postCards.forEach((card) => {
+      // Skip if already has navigation handler
+      if (card.hasAttribute('data-nav-initialized')) return;
+      
+      this.addPostCardNavigation(card as HTMLElement);
+    });
+  }
+
+  /**
+   * Add navigation functionality to a post card
+   */
+  private addPostCardNavigation(card: HTMLElement): void {
+    // Get the primary link from the card
+    const primaryLink = card.querySelector('.post-title a') as HTMLAnchorElement;
+    
+    if (!primaryLink) return;
+    
+    const href = primaryLink.href;
+    
+    // Add cursor pointer style
+    card.style.cursor = 'pointer';
+    
+    // Add click handler
+    const handleCardClick = (e: Event) => {
+      // Don't navigate if clicking on a link or button
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'A' || target.tagName === 'BUTTON' || target.closest('a, button')) {
+        return;
+      }
+      
+      // Navigate to the post
+      window.location.href = href;
+    };
+    
+    card.addEventListener('click', handleCardClick);
+    
+    // Add keyboard navigation (Enter key)
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', `Read post: ${primaryLink.textContent}`);
+    
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        window.location.href = href;
+      }
+    };
+    
+    card.addEventListener('keydown', handleKeyDown);
+    
+    // Mark as initialized
+    card.setAttribute('data-nav-initialized', 'true');
+  }
+
+  /**
    * Reinitialize UI components (useful after dynamic content changes)
    */
   public reinit(): void {
     this.elements = this.getUIElements();
     this.initCopyButtons();
+    this.initPostCardNavigation();
   }
 }
 

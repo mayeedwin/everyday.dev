@@ -7,10 +7,14 @@
     "dev": "npm run generate && vite",
     "build": "npm run generate && tsc && vite build",
     "generate": "tsx generator/index.ts",
+    "generate:watch": "tsx watch generator/index.ts",
     "preview": "npm run generate && vite preview",
     "clean": "rm -rf dist reads",
+    "clean:all": "rm -rf dist reads node_modules",
     "start": "npm run dev",
-    "deploy": "npm run build && firebase deploy"
+    "deploy": "npm run build && firebase deploy",
+    "validate": "tsx generator/validate.ts",
+    "lint": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/markdown-it": "^14.1.2",

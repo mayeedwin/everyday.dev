@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{excerpt}} - By Maye Edwin, Software Engineer and Google Developer Expert in Web Technologies" />
+    <meta name="author" content="Maye Edwin" />
+    <meta name="keywords" content="{{title}}, Maye Edwin, Software Engineer, Google Developer Expert, Web Technologies, coding tutorial, programming" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{title}} - by Maye Edwin" />
+    <meta property="og:description" content="{{excerpt}} - By Software Engineer and Google Developer Expert Maye Edwin" />
+    <meta property="og:image" content="/everydaydev_twitter_banner.jpeg" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="{{title}} - by Maye Edwin" />
+    <meta property="twitter:description" content="{{excerpt}} - By Software Engineer and Google Developer Expert Maye Edwin" />
+    <meta property="twitter:image" content="/everydaydev_twitter_banner.jpeg" />
+
+    <title>{{title}} - Coding Journal by Maye Edwin</title>
+    <link rel="icon" type="image/x-icon" href="/ed_logo.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css">
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <link rel="stylesheet" href="/src/styles/blog.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "{{title}}",
+      "description": "{{excerpt}}",
+      "author": {
+        "@type": "Person",
+        "name": "Maye Edwin",
+        "jobTitle": "Software Engineer and Google Developer Expert in Web Technologies",
+        "url": "https://everyday.dev",
+        "sameAs": [
+          "https://github.com/mayeedwin",
+          "https://twitter.com/mayeedwin1",
+          "https://linkedin.com/in/mayeedwin",
+          "https://www.youtube.com/@devmaye"
+        ]
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Maye Edwin",
+        "jobTitle": "Software Engineer and Google Developer Expert in Web Technologies"
+      },
+      "datePublished": "{{dateISO}}",
+      "url": "https://everyday.dev/reads/{{slug}}/"
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="mobile-profile">
+            <img src="/maye-edwin.jpg" alt="Maye Edwin" class="mobile-avatar" />
+            <div class="mobile-profile-info">
+                <h2>Maye Edwin</h2>
+                <p>Google Developer Expert</p>
+            </div>
+        </div>
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+            <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Desktop Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="/" class="nav-logo">{{siteName}}</a>
+                <ul class="nav-menu">
+                    {{navigation}}
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay"></div>
+
+    <div class="app-container">
+        <aside class="profile-sidebar">
+            <div class="profile-content">
+                <div class="profile-avatar">
+                    <img src="/maye-edwin.jpg" alt="Maye Edwin - Software Engineer and Google Developer Expert" class="avatar-img" />
+                    <div class="avatar-ring"></div>
+                </div>
+
+                <div class="profile-info">
+                    <h1 class="profile-name">{{authorName}}</h1>
+                    <p class="profile-title">{{authorTitle}}</p>
+                    <p class="profile-bio">{{authorBio}}</p>
+                    <div class="profile-recognition">
+                        <a href="https://developers.google.com/community/experts/directory" class="gde-badge" target="_blank" rel="noopener noreferrer">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <span>Google Developer Expert - Web Technologies</span>
+                        </a>
+                    </div>
+                </div>
+
+                <nav class="profile-nav">
+                    <ul class="nav-links">
+                        {{profileNavigation}}
+                    </ul>
+                </nav>
+
+                <div class="profile-social">
+                    {{socialLinks}}
+                </div>
+
+                <div class="profile-copyright">
+                    © {{currentYear}} Maye. All rights reserved.
+                </div>
+            </div>
+        </aside>
+
+        <main class="content-area" id="main-content">
+            <nav class="sticky-nav">
+                <div class="sticky-nav-content">
+                    <a href="/" class="back-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5"/>
+                            <path d="m12 19-7-7 7-7"/>
+                        </svg>
+                    </a>
+                    <div class="current-article">
+                        <span class="article-indicator">Reading:</span>
+                        <span class="article-title">{{title}}</span>
+                    </div>
+                </div>
+            </nav>
+
+            <article class="blog-post">
+                <header class="post-header">
+                    <div class="post-meta">
+                        <time class="post-date">{{date}}</time>
+                        <span class="post-reading-time">{{readingTime}}</span>
+                    </div>
+                    <h1 class="post-title">{{title}}</h1>
+                    <p class="post-excerpt">{{excerpt}}</p>
+                </header>
+
+                <div class="post-body">
+                    {{content}}
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

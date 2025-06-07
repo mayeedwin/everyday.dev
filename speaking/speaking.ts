@@ -1,5 +1,5 @@
-import { DateFormatter, DOMUtils, ErrorHandler } from '../src/utils/ui.js';
-import type { Talk, SpeakingData, LinkType } from '../src/types/speaking.js';
+import { DateFormatter, ErrorHandler } from "../src/utils/ui.js";
+import type { Talk, SpeakingData } from "../src/types/speaking.js";
 
 /**
  * Icon definitions for different link types
@@ -38,17 +38,15 @@ class TalkCardBuilder {
         <div class="talk-header">
           <div class="talk-meta">
             <time class="talk-date">${formattedDate}</time>
-            <span class="talk-type">${talk.type}</span>
             <div class="talk-location">${talk.location}</div>
           </div>
           ${linksHtml}
         </div>
-        
+
         <div class="talk-content">
           <h3 class="talk-title">${talk.title}</h3>
-          <p class="talk-event">${talk.event}</p>
           <p class="talk-description">${talk.description}</p>
-          
+
           <div class="talk-footer">
             <div class="talk-topics">${topicsHtml}</div>
           </div>
@@ -60,16 +58,16 @@ class TalkCardBuilder {
   private static buildTopicsHtml(topics: string[]): string {
     return topics
       .slice(0, 3)
-      .map(topic => `<span class="topic-tag">${topic}</span>`)
-      .join('');
+      .map((topic) => `<span class="topic-tag">${topic}</span>`)
+      .join("");
   }
 
   private static buildLinksHtml(links: Record<string, string>): string {
-    if (!links || Object.keys(links).length === 0) return '';
+    if (!links || Object.keys(links).length === 0) return "";
 
     const linkButtons = Object.entries(links)
       .map(([type, url]) => this.buildLinkButton(type, url))
-      .join('');
+      .join("");
 
     return `<div class="talk-links">${linkButtons}</div>`;
   }
@@ -77,7 +75,7 @@ class TalkCardBuilder {
   private static buildLinkButton(type: string, url: string): string {
     const linkText = type.charAt(0).toUpperCase() + type.slice(1);
     const iconSvg = LINK_ICONS[type] || LINK_ICONS.event;
-    
+
     return `
       <a href="${url}" class="talk-link" target="_blank" rel="noopener noreferrer">
         ${iconSvg}
@@ -91,11 +89,11 @@ class TalkCardBuilder {
  * Data service for speaking engagements
  */
 class SpeakingDataService {
-  private static readonly DATA_URL = '../src/data/speaking.json';
+  private static readonly DATA_URL = "../src/data/speaking.json";
 
   static async fetchSpeakingData(): Promise<Talk[]> {
     const response = await fetch(this.DATA_URL);
-    
+
     if (!response.ok) {
       throw new Error(`Failed to fetch speaking data: ${response.status}`);
     }
@@ -109,9 +107,10 @@ class SpeakingDataService {
  * Main speaking page manager
  */
 class SpeakingManager {
-  private static readonly CONTAINER_ID = 'speaking-list';
-  private static readonly NO_RESULTS_MESSAGE = 'No speaking engagements found.';
-  private static readonly ERROR_MESSAGE = 'Sorry, there was an error loading the speaking engagements.';
+  private static readonly CONTAINER_ID = "speaking-list";
+  private static readonly NO_RESULTS_MESSAGE = "No speaking engagements found.";
+  private static readonly ERROR_MESSAGE =
+    "Sorry, there was an error loading the speaking engagements.";
 
   private speakingData: Talk[] = [];
 
@@ -122,7 +121,9 @@ class SpeakingManager {
   private async init(): Promise<void> {
     const container = document.getElementById(SpeakingManager.CONTAINER_ID);
     if (!container) {
-      console.error(`Container with ID "${SpeakingManager.CONTAINER_ID}" not found`);
+      console.error(
+        `Container with ID "${SpeakingManager.CONTAINER_ID}" not found`
+      );
       return;
     }
 
@@ -136,7 +137,7 @@ class SpeakingManager {
   }
 
   private renderSpeakingList(container: HTMLElement): void {
-    const sortedData = DateFormatter.sortByDate(this.speakingData, 'date');
+    const sortedData = DateFormatter.sortByDate(this.speakingData, "date");
 
     if (sortedData.length === 0) {
       this.showNoResults(container);
@@ -144,8 +145,8 @@ class SpeakingManager {
     }
 
     const cardsHtml = sortedData
-      .map(talk => TalkCardBuilder.build(talk))
-      .join('');
+      .map((talk) => TalkCardBuilder.build(talk))
+      .join("");
 
     container.innerHTML = cardsHtml;
   }
@@ -159,19 +160,15 @@ class SpeakingManager {
   }
 
   private showError(container: HTMLElement): void {
-    ErrorHandler.showError(
-      container,
-      SpeakingManager.ERROR_MESSAGE,
-      () => window.location.reload()
+    ErrorHandler.showError(container, SpeakingManager.ERROR_MESSAGE, () =>
+      window.location.reload()
     );
   }
 }
 
 // Initialize when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    new SpeakingManager();
-  });
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => new SpeakingManager());
 } else {
   new SpeakingManager();
 }
