@@ -115,6 +115,9 @@ const blogTemplate = `<!DOCTYPE html>
                 <a href="/" class="nav-logo">everyday.dev</a>
                 <ul class="nav-menu">
                     <li class="nav-item">
+                        <a href="/speaking/" class="nav-link">SPEAKING</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="https://www.youtube.com/@devmaye" class="nav-link" target="_blank" rel="noopener noreferrer">WATCH</a>
                     </li>
                     <li class="nav-item">
@@ -152,6 +155,7 @@ const blogTemplate = `<!DOCTYPE html>
 
                 <nav class="profile-nav">
                     <ul class="nav-links">
+                        <li><a href="/speaking/" class="nav-link">SPEAKING</a></li>
                         <li><a href="#" class="nav-link">WATCH</a></li>
                         <li><a href="#" class="nav-link">JOIN</a></li>
                     </ul>
@@ -339,6 +343,9 @@ const homepageTemplate = `<!DOCTYPE html>
                 <a href="/" class="nav-logo">everyday.dev</a>
                 <ul class="nav-menu">
                     <li class="nav-item">
+                        <a href="/speaking/" class="nav-link">SPEAKING</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="https://www.youtube.com/@devmaye" class="nav-link" target="_blank" rel="noopener noreferrer">WATCH</a>
                     </li>
                     <li class="nav-item">
@@ -376,6 +383,7 @@ const homepageTemplate = `<!DOCTYPE html>
 
                 <nav class="profile-nav">
                     <ul class="nav-links">
+                        <li><a href="/speaking/" class="nav-link">SPEAKING</a></li>
                         <li><a href="#" class="nav-link">WATCH</a></li>
                         <li><a href="#" class="nav-link">JOIN</a></li>
                     </ul>
@@ -522,13 +530,13 @@ const generateSite = async (): Promise<void> => {
   try {
     console.log("🚀 Generating static site...");
 
-    const readsDir = join(rootDir, "reads");
+    const blogPagesDir = join(rootDir, "reads");
     try {
-      await fs.rm(readsDir, { recursive: true, force: true });
+      await fs.rm(blogPagesDir, { recursive: true, force: true });
     } catch {}
 
     const postsData = await fs.readFile(
-      join(rootDir, "markdown/posts.json"),
+      join(rootDir, "src/data/posts.json"),
       "utf-8"
     );
     const { posts }: PostsData = JSON.parse(postsData);

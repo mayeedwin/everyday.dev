@@ -1,0 +1,388 @@
+{
+  "speaking": [
+    {
+      "id": "1",
+      "title": "Global GDG Summit, Google IO 2018",
+      "event": "Google IO 2018",
+      "date": "2018-05-07",
+      "location": "Sunnyvale, CA, USA",
+      "type": "Lightning Talk",
+      "duration": "15 minutes",
+      "audience": "200+ developers",
+      "description": "Lightning Talk during GDG Summit in Sunnyvale, California on how to Build Great Learning Developer Communities.",
+      "topics": [
+        "Community Building",
+        "Developer Relations",
+        "GDG",
+        "Learning"
+      ],
+      "links": {}
+    },
+    {
+      "id": "2",
+      "title": "DevFest South Africa 2022",
+      "event": "DevFest South Africa 2022",
+      "date": "2022-11-25",
+      "location": "Cape Town, South Africa",
+      "type": "Keynote",
+      "duration": "45 minutes",
+      "audience": "300+ developers",
+      "description": "PWAs In 2022 And Beyond",
+      "topics": [
+        "Progressive Web Apps",
+        "Web Development",
+        "PWA",
+        "Future Tech"
+      ],
+      "links": {
+        "event": "https://gdg.community.dev/events/details/google-gdg-cape-town-presents-devfest-south-africa-2022/"
+      }
+    },
+    {
+      "id": "3",
+      "title": "DevFest Accra 2022",
+      "event": "DevFest Accra 2022",
+      "date": "2022-11-19",
+      "location": "Accra, Ghana",
+      "type": "Keynote",
+      "duration": "45 minutes",
+      "audience": "250+ developers",
+      "description": "PWAs In 2022 And Beyond, DevFest Accra 2022.",
+      "topics": [
+        "Progressive Web Apps",
+        "Web Development",
+        "PWA",
+        "Future Tech"
+      ],
+      "links": {
+        "event": "https://gdg.community.dev/events/details/google-gdg-accra-presents-devfest-accra-2022/"
+      }
+    },
+    {
+      "id": "4",
+      "title": "Supercharge Your Team's Productivity With Micro Frontends",
+      "event": "Droidcon Kenya 2022",
+      "date": "2022-11-16",
+      "location": "Nairobi, Kenya",
+      "type": "Keynote",
+      "duration": "45 minutes",
+      "audience": "400+ developers",
+      "description": "Supercharge Your Team's Productivity With Micro Frontends.",
+      "topics": [
+        "Micro Frontends",
+        "Architecture",
+        "Team Productivity",
+        "Frontend Development"
+      ],
+      "links": {
+        "event": "https://droidcon.co.ke/sessions/supercharge-your-teams-productivity-with-micro-frontends-1667497717"
+      }
+    },
+    {
+      "id": "5",
+      "title": "PWAs In 2022 & Beyond",
+      "event": "DevFest Nairobi 2022",
+      "date": "2022-11-05",
+      "location": "Nairobi, Kenya",
+      "type": "Keynote",
+      "duration": "45 minutes",
+      "audience": "350+ developers",
+      "description": "Web Keynote - PWAs In 2022 & Beyond",
+      "topics": [
+        "Progressive Web Apps",
+        "Web Development",
+        "PWA",
+        "Future Tech"
+      ],
+      "links": {
+        "event": "https://gdg.community.dev/events/details/google-gdg-nairobi-presents-devfest-nairobi-2022/"
+      }
+    },
+    {
+      "id": "6",
+      "title": "Evolution of App Maintenance in Mobile Apps and Web Apps",
+      "event": "DevFest Kigali 2022",
+      "date": "2022-09-24",
+      "location": "Kigali, Rwanda",
+      "type": "Keynote",
+      "duration": "45 minutes",
+      "audience": "200+ developers",
+      "description": "Evolution of App Maintenance in Mobile Apps and Web Apps.",
+      "topics": [
+        "App Maintenance",
+        "Mobile Development",
+        "Web Development",
+        "Software Lifecycle"
+      ],
+      "links": {
+        "event": "https://gdg.community.dev/events/details/google-gdg-kigali-presents-kigali-devfest-2022/"
+      }
+    },
+    {
+      "id": "7",
+      "title": "Progressive Web Enhancements",
+      "event": "Google IO 2022 Extended Lagos",
+      "date": "2022-07-16",
+      "location": "Lagos, Nigeria",
+      "type": "Keynote",
+      "duration": "45 minutes",
+      "audience": "300+ developers",
+      "description": "General web talk about Progressive Web Enhacements and how to use them to build a better web experience. Including PWAs in 2022 and the beyond.",
+      "topics": [
+        "Progressive Web Apps",
+        "Web Enhancement",
+        "User Experience",
+        "Web Development"
+      ],
+      "links": {
+        "event": "https://gdg.community.dev/events/details/google-gdg-nairobi-presents-google-io-2022-extended-nairobi/"
+      }
+    },
+    {
+      "id": "8",
+      "title": "The Future of the Web",
+      "event": "Google IO 2022 Extended Makurdi",
+      "date": "2022-06-18",
+      "location": "Makurdi, Nigeria",
+      "type": "Keynote",
+      "duration": "45 minutes",
+      "audience": "200+ developers",
+      "description": "Gave a Web Keynote and some amazing stuff Google and other browser vendors have been doing the last one year and what the future of the web is going to be.",
+      "topics": [
+        "Web Development",
+        "Browser Technologies",
+        "Future Tech",
+        "Google"
+      ],
+      "links": {
+        "event": "https://gdg.community.dev/events/details/google-gdg-makurdi-presents-google-io-extended-2022-makurdi/"
+      }
+    },
+    {
+      "id": "9",
+      "title": "The Future of the Web",
+      "event": "Google IO 2022 Extended Nairobi",
+      "date": "2022-06-04",
+      "location": "Nairobi, Kenya",
+      "type": "Keynote",
+      "duration": "45 minutes",
+      "audience": "400+ developers",
+      "description": "Gave a Web Keynote and some amazing stuff Google and other browser vendors have been doing the last one year and what the future of the web is going to be.",
+      "topics": [
+        "Web Development",
+        "Browser Technologies",
+        "Future Tech",
+        "Google"
+      ],
+      "links": {
+        "event": "https://gdg.community.dev/events/details/google-gdg-nairobi-presents-google-io-2022-extended-nairobi/"
+      }
+    },
+    {
+      "id": "10",
+      "title": "Building Secure Web Apps with Credential API",
+      "event": "Safe Conference 2021",
+      "date": "2021-12-03",
+      "location": "Global (Virtual)",
+      "type": "Conference Talk",
+      "duration": "30 minutes",
+      "audience": "500+ developers",
+      "description": "A Talk on how to build your web app around one of the web core tenets - safety; and how you could use the Credential API to build a robust and secure web app.",
+      "topics": [
+        "Web Security",
+        "Credential API",
+        "Web Safety",
+        "Authentication"
+      ],
+      "links": {
+        "event": "https://webdirections.org/safe/speakers/maye-edwin.php"
+      }
+    },
+    {
+      "id": "11",
+      "title": "Modern Web Capabilities",
+      "event": "PWA Summit 2021",
+      "date": "2021-10-06",
+      "location": "Global (Virtual)",
+      "type": "Conference Talk",
+      "duration": "30 minutes",
+      "audience": "1000+ developers",
+      "description": "A Talk on Modern Web Capabilities and why you should care. The PWA Summit is a collaboration between folks from a handful of different companies involved in the creation of PWA technologies: Google, Intel, Microsoft and Samsung.",
+      "topics": [
+        "Modern Web Capabilities",
+        "Progressive Web Apps",
+        "Web APIs",
+        "Browser Features"
+      ],
+      "links": {
+        "event": "https://pwasummit.org/"
+      }
+    },
+    {
+      "id": "12",
+      "title": "Building Next-level apps for the Web",
+      "event": "Chrome Dev Summit Extended, SSA",
+      "date": "2021-02-12",
+      "location": "Africa (Virtual)",
+      "type": "Conference Talk",
+      "duration": "30 minutes",
+      "audience": "300+ developers",
+      "description": "A Talk on Building Next-level apps for the Web",
+      "topics": [
+        "Web Development",
+        "Chrome",
+        "Advanced Web Apps",
+        "Modern Web"
+      ],
+      "links": {
+        "event": "https://twitter.com/GoogleDevExpert/status/1359163587995009030?s=20",
+        "video": "https://twitter.com/GoogleDevExpert/status/1359163587995009030?s=20"
+      }
+    },
+    {
+      "id": "13",
+      "title": "Using GitHub Packages",
+      "event": "GitHub Africa Meetup",
+      "date": "2020-11-17",
+      "location": "Virtual",
+      "type": "Conference Talk",
+      "duration": "30 minutes",
+      "audience": "200+ developers",
+      "description": "A Talk on using GitHub Packages",
+      "topics": ["GitHub", "Package Management", "DevOps", "CI/CD"],
+      "links": {
+        "event": "https://twitter.com/github/status/1326211784886394888",
+        "video": "https://www.youtube.com/watch?v=TP7NfGQ2xCE"
+      }
+    },
+    {
+      "id": "14",
+      "title": "Unlocking New Web Capabilities Keeping The Web Instant, Powerful and Safe",
+      "event": "OpenJS World 2020",
+      "date": "2020-06-23",
+      "location": "Austin, TX, USA (Virtual)",
+      "type": "Conference Talk",
+      "duration": "30 minutes",
+      "audience": "800+ developers",
+      "description": "A Talk about Unlocking New Web Capabilities Keeping The Web Instant, Powerful and Safe",
+      "topics": [
+        "Web Capabilities",
+        "Web Performance",
+        "Web Security",
+        "Modern Web"
+      ],
+      "links": {
+        "event": "https://events.linuxfoundation.org/openjs-world/",
+        "video": "https://youtu.be/epRrkQzGMFA"
+      }
+    },
+    {
+      "id": "15",
+      "title": "Building Learning Developer Communities",
+      "event": "Remote Talk On Developer Community Building, GDG SSA",
+      "date": "2020-01-27",
+      "location": "Africa (Virtual)",
+      "type": "Conference Talk",
+      "duration": "45 minutes",
+      "audience": "150+ community organizers",
+      "description": "Speaking Remotely to GDG Community Organizers across Africa about Building Learning Developer Communities",
+      "topics": [
+        "Community Building",
+        "Developer Relations",
+        "GDG",
+        "Leadership"
+      ],
+      "links": {}
+    },
+    {
+      "id": "16",
+      "title": "Technology Entrepreneurship for Girls",
+      "event": "Safaricom Technovation Challenge 2020",
+      "date": "2020-01-25",
+      "location": "Nakuru, Kenya",
+      "type": "Keynote",
+      "duration": "45 minutes",
+      "audience": "300+ students",
+      "description": "Keynote Speaker - Technovation is a Global Technology Entrepreneurship Program for girls in High School. Glad to be Keynoting at the launch",
+      "topics": [
+        "Technology Entrepreneurship",
+        "Education",
+        "Women in Tech",
+        "Youth Development"
+      ],
+      "links": {}
+    },
+    {
+      "id": "17",
+      "title": "Compassionate Tech Values",
+      "event": "Google's Africa Developer Scholarship Final Meetup",
+      "date": "2019-12-07",
+      "location": "Kenya",
+      "type": "Conference Talk",
+      "duration": "30 minutes",
+      "audience": "200+ developers",
+      "description": "A Talk on Compassionate Tech Values",
+      "topics": [
+        "Tech Ethics",
+        "Compassionate Technology",
+        "Values",
+        "Developer Culture"
+      ],
+      "links": {}
+    },
+    {
+      "id": "18",
+      "title": "Disruptive Technology in Construction",
+      "event": "The Big 5 Construct Kenya 2019",
+      "date": "2019-11-06",
+      "location": "Kenya",
+      "type": "Workshop",
+      "duration": "2 hours",
+      "audience": "100+ professionals",
+      "description": "A Workshop on Disruptive Technology covering how Drone Technology, Virtual Reality and Augmented Reality are disrupting the industry. My second time speaking; in a row",
+      "topics": [
+        "Drone Technology",
+        "Virtual Reality",
+        "Augmented Reality",
+        "Construction Tech"
+      ],
+      "links": {}
+    },
+    {
+      "id": "19",
+      "title": "How to write CSS Progressively - Frontend Modularization",
+      "event": "DevFest Nairobi 2019",
+      "date": "2019-10-19",
+      "location": "Kenya",
+      "type": "Conference Talk",
+      "duration": "30 minutes",
+      "audience": "300+ developers",
+      "description": "How to write CSS Progressively - Frontend Modularization. This Talk involves an overview of component-based code splitting and use of CSS Variables",
+      "topics": [
+        "CSS",
+        "Frontend Development",
+        "Modularization",
+        "CSS Variables"
+      ],
+      "links": {}
+    },
+    {
+      "id": "20",
+      "title": "Unlocking New Web Capabilities Keeping The Web Instant, Powerful and Safe",
+      "event": "DevCraft Conference 2019",
+      "date": "2019-09-26",
+      "location": "Kenya",
+      "type": "Conference Talk",
+      "duration": "45 minutes",
+      "audience": "500+ developers",
+      "description": "A Talk on Unlocking New Web Capabilities Keeping The Web Instant, Powerful and Safe. DevCraft is Kenya's Software Development industry's largest event",
+      "topics": [
+        "Web Capabilities",
+        "Web Performance",
+        "Web Security",
+        "Modern Web"
+      ],
+      "links": {}
+    }
+  ]
+}

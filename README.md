@@ -1,6 +1,6 @@
 # EverydayDev
 
-A modern, TypeScript-powered static site generator for a coding journal. Built for developers who want to share real experiences, quick wins, and the human side of coding.
+A modern, TypeScript-powered static site with shared UI utilities and responsive design. Built for developers who want to share real experiences, quick wins, and the human side of coding.
 
 ## 🚀 Quick Start
 
@@ -30,13 +30,23 @@ everyday.dev/
 ├── markdown/              # Content source
 │   ├── posts.json         # Post metadata
 │   └── posts/             # Markdown files
-│       ├── site-showcase.md
 │       └── clean-code-fifteen-minutes.md
-├── src/                   # Frontend assets
+├── src/                   # Frontend assets & utilities
 │   ├── styles/
-│   │   └── main.css       # Main stylesheet
+│   │   ├── main.css       # Main stylesheet with CSS variables
+│   │   └── blog.css       # Blog-specific styles
+│   ├── utils/
+│   │   ├── ui.ts          # Shared UI utilities & components
+│   │   └── markdown.ts    # Markdown processing utilities
+│   ├── types/
+│   │   └── speaking.ts    # TypeScript interfaces for speaking data
+│   ├── router.ts          # Client-side routing (disabled for normal navigation)
 │   └── main.ts            # TypeScript entry point
-├── reads/                 # Generated HTML files (auto-created)
+├── speaking/              # Speaking engagements page
+│   ├── index.html         # Speaking page
+│   ├── speaking.ts        # Speaking page logic
+│   └── speaking.json      # Speaking data
+├── reads/                 # Generated blog post HTML files (auto-created)
 ├── public/                # Static assets
 └── index.html             # Generated homepage
 ```
@@ -94,6 +104,43 @@ npm run generate
 
 Your new post will be available at `/reads/my-new-post/`
 
+## 🎤 Managing Speaking Engagements
+
+The site includes a dedicated speaking page that showcases talks, workshops, and presentations.
+
+### Adding Speaking Engagements
+
+Update `speaking/speaking.json` with your talk details:
+
+```json
+{
+  "talks": [
+    {
+      "id": "unique-talk-id",
+      "title": "Your Talk Title",
+      "event": "Conference Name 2024",
+      "date": "2024-01-20",
+      "location": "City, Country",
+      "type": "Conference Talk",
+      "duration": "45 minutes",
+      "audience": "300+ developers",
+      "description": "Brief description of what the talk covers...",
+      "topics": ["JavaScript", "TypeScript", "Web Performance"],
+      "links": {
+        "slides": "https://slides.com/your-slides",
+        "video": "https://youtube.com/watch?v=..."
+      }
+    }
+  ]
+}
+```
+
+The speaking page automatically:
+- Displays talks in a clean, card-based layout
+- Shows metadata like date, type, and audience size
+- Includes topic tags and action links
+- Provides contact information for booking inquiries
+
 ## 🛠️ How It Works
 
 ### The Generator
@@ -107,6 +154,15 @@ The heart of the project is a TypeScript-powered static site generator (`generat
 5. **Generates pages**: Creates individual HTML pages for each post
 6. **Builds homepage**: Creates the main page with a list of all posts
 
+### Shared UI Architecture
+
+The project features a modular, reusable UI system:
+
+- **Shared utilities** (`src/utils/ui.ts`): Centralized UI functionality for mobile navigation, copy buttons, and common interactions
+- **TypeScript interfaces** (`src/types/`): Type-safe data structures
+- **Modular components**: Reusable navigation and layout components
+- **No code duplication**: All pages use the same underlying utilities
+
 ### Auto-Regeneration
 
 The site rebuilds automatically when you:
@@ -115,12 +171,14 @@ The site rebuilds automatically when you:
 - Run `npm run build` (generates + builds for production)
 - Run `npm run generate` (just generates the static files)
 
-### Styling
+### Styling & Design
 
-- Modern CSS with semantic design system
-- Mobile-first responsive design
+- Modern CSS with comprehensive design system using CSS custom properties
+- Mobile-first responsive design with proper mobile navigation
 - Clean typography optimized for reading
-- Dark mode ready (variables in `src/styles/main.css`)
+- Thin scrollbars and smooth interactions
+- Active navigation states and hover effects
+- Compact speaking page layout optimized for content display
 
 ## 🎨 Customization
 
@@ -142,12 +200,13 @@ The HTML templates are in `generator/index.ts`:
 
 ### Adding Features
 
-Want to add new functionality? The generator is fully TypeScript with:
+Want to add new functionality? The project is fully TypeScript with:
 
-- Type-safe interfaces in `index.models.ts`
-- Modern async/await patterns
-- Modular arrow functions
-- Clean error handling
+- **Type-safe interfaces** in `src/types/` and `generator/index.models.ts`
+- **Shared utilities** in `src/utils/` for reusable functionality
+- **Modular architecture** with clean separation of concerns
+- **Modern async/await patterns** and clean error handling
+- **No code duplication** - add once, use everywhere
 
 ## 📝 Content Guidelines
 
@@ -212,11 +271,12 @@ vercel --prod
 
 ### Tech Stack
 
-- **TypeScript**: Type-safe development
-- **Vite**: Fast development and building
+- **TypeScript**: Type-safe development with modular architecture
+- **Vite**: Fast development and building with hot reload
 - **Markdown-it**: Markdown processing with syntax highlighting
 - **Prism.js**: Code syntax highlighting
-- **Modern CSS**: No frameworks, just clean, semantic styles
+- **Modern CSS**: No frameworks, comprehensive design system with CSS custom properties
+- **Shared UI utilities**: Centralized TypeScript utilities for consistent UX
 
 ## 🤝 Contributing
 

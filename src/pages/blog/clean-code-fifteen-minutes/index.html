@@ -50,7 +50,7 @@
         "jobTitle": "Software Engineer and Google Developer Expert in Web Technologies"
       },
       "datePublished": "2025-06-07",
-      "url": "https://everyday.dev/reads/clean-code-fifteen-minutes/"
+      "url": "https://everyday.dev/blog/clean-code-fifteen-minutes/"
     }
     </script>
 </head>
@@ -230,5 +230,49 @@
     </div>
 
     <script type="module" src="/src/main.ts"></script>
+    <script>
+        // Simple mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggle = document.querySelector('.mobile-nav-toggle');
+            const sidebar = document.querySelector('.profile-sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            
+            if (toggle && sidebar && overlay) {
+                toggle.onclick = function() {
+                    sidebar.classList.toggle('active');
+                    overlay.classList.toggle('active');
+                    toggle.classList.toggle('active');
+                };
+                
+                overlay.onclick = function() {
+                    sidebar.classList.remove('active');
+                    overlay.classList.remove('active');
+                    toggle.classList.remove('active');
+                };
+            }
+
+            // Add copy buttons to code blocks
+            const codeBlocks = document.querySelectorAll('pre');
+            codeBlocks.forEach(function(block) {
+                const button = document.createElement('button');
+                button.className = 'copy-button';
+                button.textContent = 'Copy';
+                button.addEventListener('click', function() {
+                    const code = block.querySelector('code');
+                    const text = code ? code.textContent : block.textContent;
+                    navigator.clipboard.writeText(text).then(function() {
+                        button.textContent = 'Copied!';
+                        button.classList.add('copied');
+                        setTimeout(function() {
+                            button.textContent = 'Copy';
+                            button.classList.remove('copied');
+                        }, 2000);
+                    });
+                });
+                block.style.position = 'relative';
+                block.appendChild(button);
+            });
+        });
+    </script>
 </body>
 </html>

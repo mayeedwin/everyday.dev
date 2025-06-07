@@ -1,8 +1,4 @@
-interface RouteData {
-  title: string;
-  content: string;
-  url: string;
-}
+import type { RouteData } from './types';
 
 class Router {
   private _cache = new Map<string, RouteData>();
@@ -35,12 +31,7 @@ class Router {
   };
 
   private _isInternalLink(link: HTMLAnchorElement): boolean {
-    return (
-      link.hostname === window.location.hostname &&
-      !link.hasAttribute("target") &&
-      !link.href.includes("mailto:") &&
-      !link.href.includes("tel:")
-    );
+    return false;
   }
 
   private _handlePopState = () => {
@@ -134,29 +125,39 @@ class Router {
   }
 
   private _initializePageScripts() {
-    // Re-add copy buttons to code blocks
+    // Reinitialize UI components for the new content
+    import('./utils/ui.js').then(({ uiManager }) => {
+      if (uiManager) {
+        uiManager.reinit();
+      }
+    }).catch(() => {
+      // Fallback to basic copy button functionality if module fails to load
+      this._fallbackCopyButtons();
+    });
+  }
+
+  private _fallbackCopyButtons() {
     const codeBlocks = document.querySelectorAll("pre");
     codeBlocks.forEach((block) => {
-      // Remove existing copy button if any
-      const existingButton = block.querySelector(".copy-button");
-      if (existingButton) {
-        existingButton.remove();
-      }
+      if (block.querySelector(".copy-button")) return;
 
       const button = document.createElement("button");
       button.className = "copy-button";
       button.textContent = "Copy";
-      button.addEventListener("click", () => {
-        const code = block.querySelector("code");
-        const text = code ? code.textContent : block.textContent;
-        navigator.clipboard.writeText(text || "").then(() => {
+      button.addEventListener("click", async () => {
+        try {
+          const code = block.querySelector("code");
+          const text = code ? code.textContent : block.textContent;
+          await navigator.clipboard.writeText(text || "");
           button.textContent = "Copied!";
           button.classList.add("copied");
           setTimeout(() => {
             button.textContent = "Copy";
             button.classList.remove("copied");
           }, 2000);
-        });
+        } catch (error) {
+          console.warn("Failed to copy to clipboard:", error);
+        }
       });
       block.style.position = "relative";
       block.appendChild(button);
