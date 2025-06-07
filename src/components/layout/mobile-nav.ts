@@ -13,10 +13,10 @@ export class MobileNav {
 
   private getElements(): UIElements {
     return {
-      toggle: document.querySelector('.mobile-nav-toggle'),
-      sidebar: document.querySelector('.profile-sidebar'),
-      overlay: document.querySelector('.sidebar-overlay'),
-      closeBtn: document.querySelector('.sidebar-close-btn')
+      toggle: document.querySelector('.mobile-nav-toggle') as HTMLElement | null,
+      sidebar: document.querySelector('.profile-sidebar') as HTMLElement | null,
+      overlay: document.querySelector('.sidebar-overlay') as HTMLElement | null,
+      closeBtn: document.querySelector('.sidebar-close-btn') as HTMLElement | null
     };
   }
 
