@@ -30,7 +30,7 @@ class Router {
     this.navigateTo(link.href);
   };
 
-  private _isInternalLink(link: HTMLAnchorElement): boolean {
+  private _isInternalLink(_link: HTMLAnchorElement): boolean {
     return false;
   }
 
