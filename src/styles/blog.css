@@ -64,9 +64,19 @@
 }
 
 .article-indicator {
-  color: #6b7280;
+  background: linear-gradient(45deg, #6b7280, #374151, #1f2937, #374151, #6b7280);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 400;
   flex-shrink: 0;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 .article-title {
@@ -311,7 +321,6 @@
   cursor: pointer;
   transition: all 0.2s ease;
   z-index: var(--z-copy-button);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .copy-button:hover {

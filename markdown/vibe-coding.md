@@ -1,7 +1,3 @@
-# Vibe Coding: The Brutal Reality for Software Engineers
-
-AI doesn't replace expertise. It amplifies it. If you don't know what good code looks like, AI will help you ship garbage faster.
-
 ## The Harsh Truths
 
 ### 1. Your Expertise Still Matters (More Than Ever)
