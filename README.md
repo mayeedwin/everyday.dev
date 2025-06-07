@@ -43,10 +43,12 @@ everyday.dev/
 │   └── main.ts            # TypeScript entry point
 ├── speaking/              # Speaking engagements page
 │   ├── index.html         # Speaking page
-│   ├── speaking.ts        # Speaking page logic
-│   └── speaking.json      # Speaking data
+│   └── index.ts           # Speaking page logic
 ├── reads/                 # Generated blog post HTML files (auto-created)
 ├── public/                # Static assets
+│   ├── data/             # Data files served as static assets
+│   │   └── speaking.json # Speaking engagements data
+│   └── *.ico, *.svg      # Images and icons
 └── index.html             # Generated homepage
 ```
 
@@ -109,25 +111,24 @@ The site includes a dedicated speaking page that showcases talks, workshops, and
 
 ### Adding Speaking Engagements
 
-Update `speaking/speaking.json` with your talk details:
+Update `public/data/speaking.json` with your talk details:
 
 ```json
 {
-  "talks": [
+  "speaking": [
     {
       "id": "unique-talk-id",
       "title": "Your Talk Title",
-      "event": "Conference Name 2024",
       "date": "2024-01-20",
       "location": "City, Country",
-      "type": "Conference Talk",
       "duration": "45 minutes",
       "audience": "300+ developers",
       "description": "Brief description of what the talk covers...",
       "topics": ["JavaScript", "TypeScript", "Web Performance"],
       "links": {
         "slides": "https://slides.com/your-slides",
-        "video": "https://youtube.com/watch?v=..."
+        "video": "https://youtube.com/watch?v=...",
+        "event": "https://conference-website.com"
       }
     }
   ]

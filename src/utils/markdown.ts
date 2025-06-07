@@ -36,18 +36,18 @@ const md: MarkdownIt = new MarkdownIt({
   }
 });
 
-export function renderMarkdown(content: string): string {
+export const renderMarkdown = (content: string): string => {
   return md.render(content);
 }
 
-export function calculateReadingTime(content: string): string {
+export const calculateReadingTime = (content: string): string => {
   const wordsPerMinute = 200;
   const words = content.trim().split(/\s+/).length;
   const minutes = Math.ceil(words / wordsPerMinute);
   return `${minutes} min read`;
 }
 
-export function formatDate(dateString: string): string {
+export const formatDate = (dateString: string): string => {
   const date = new Date(dateString);
   return date.toLocaleDateString("en-US", {
     year: "numeric",
@@ -56,7 +56,7 @@ export function formatDate(dateString: string): string {
   });
 }
 
-export function createSlug(title: string): string {
+export const createSlug = (title: string): string => {
   return title
     .toLowerCase()
     .replace(/[^a-z0-9 -]/g, "")
@@ -65,7 +65,7 @@ export function createSlug(title: string): string {
     .trim();
 }
 
-export async function loadBlogPosts(): Promise<BlogPost[]> {
+export const loadBlogPosts = async (): Promise<BlogPost[]> => {
   try {
     const response = await fetch("/posts/posts.json");
     if (!response.ok) {
@@ -79,7 +79,7 @@ export async function loadBlogPosts(): Promise<BlogPost[]> {
   }
 }
 
-export async function loadBlogPost(slug: string): Promise<BlogPost> {
+export const loadBlogPost = async (slug: string): Promise<BlogPost> => {
   try {
     const posts = await loadBlogPosts();
     const post = posts.find((p) => p.slug === slug);
@@ -105,21 +105,21 @@ export async function loadBlogPost(slug: string): Promise<BlogPost> {
   }
 }
 
-export function getRelatedPosts(
+export const getRelatedPosts = (
   currentPost: BlogPost,
   allPosts: BlogPost[],
   limit: number = 3
-): BlogPost[] {
+): BlogPost[] => {
   return allPosts
     .filter((post) => post.id !== currentPost.id)
     .filter((post) => post.tags.some((tag) => currentPost.tags.includes(tag)))
     .slice(0, limit);
 }
 
-export function debounce<T extends (...args: any[]) => any>(
+export const debounce = <T extends (...args: any[]) => any>(
   func: T,
   wait: number
-): (...args: Parameters<T>) => void {
+): ((...args: Parameters<T>) => void) => {
   let timeout: ReturnType<typeof setTimeout>;
   return function (this: any, ...args: Parameters<T>) {
     clearTimeout(timeout);

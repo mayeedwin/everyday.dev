@@ -1,5 +1,5 @@
-import { DateFormatter, ErrorHandler } from "../src/utils/ui.js";
-import type { Talk, SpeakingData } from "../src/types/speaking.js";
+import { DateFormatter, ErrorHandler } from "../src/utils/ui";
+import type { Talk, SpeakingData } from "../src/types/speaking";
 
 /**
  * Icon definitions for different link types
@@ -89,7 +89,7 @@ class TalkCardBuilder {
  * Data service for speaking engagements
  */
 class SpeakingDataService {
-  private static readonly DATA_URL = "../src/data/speaking.json";
+  private static readonly DATA_URL = "/data/speaking.json";
 
   static async fetchSpeakingData(): Promise<Talk[]> {
     const response = await fetch(this.DATA_URL);
