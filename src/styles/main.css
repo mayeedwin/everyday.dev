@@ -466,6 +466,15 @@ pre {
   background: #ffffff;
   overflow-y: auto; /* Only content area scrolls */
   height: calc(100vh - 60px);
+  transition: opacity 0.15s ease-in-out;
+}
+
+.router-loading {
+  cursor: wait;
+}
+
+.router-loading * {
+  cursor: wait !important;
 }
 
 
