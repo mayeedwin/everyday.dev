@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "slug": "vibe-coding",
+      "title": "Vibe Coding: The Brutal Reality for Software Engineers",
+      "excerpt": "AI doesn't replace expertise. It amplifies it. If you don't know what good code looks like, AI will help you ship garbage faster.",
+      "date": "2025-01-07"
+    },
+    {
+      "slug": "clean-code-fifteen-minutes",
+      "title": "Clean Code: The 15-Minute Rule",
+      "excerpt": "If you can't explain your code in 15 minutes, it's probably too complex.",
+      "date": "2025-01-06"
+    }
+  ]
+}
