@@ -207,7 +207,9 @@ export const router = new Router();
 document.addEventListener(
   "mouseenter",
   (e) => {
-    const target = e.target as HTMLElement;
+    const target = e.target;
+    if (!(target instanceof HTMLElement)) return;
+    
     const link = target.closest("a");
 
     if (link && link.hostname === window.location.hostname) {
