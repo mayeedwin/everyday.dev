@@ -272,12 +272,13 @@ vercel --prod
 
 ### Tech Stack
 
-- **TypeScript**: Type-safe development with modular architecture
+- **TypeScript**: Type-safe development with modular architecture and arrow functions
 - **Vite**: Fast development and building with hot reload
 - **Markdown-it**: Markdown processing with syntax highlighting
 - **Prism.js**: Code syntax highlighting
 - **Modern CSS**: No frameworks, comprehensive design system with CSS custom properties
 - **Shared UI utilities**: Centralized TypeScript utilities for consistent UX
+- **Static data**: JSON files served from `public/data/` for automatic deployment
 
 ## 🤝 Contributing
 
