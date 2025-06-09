@@ -264,13 +264,13 @@
           <header class="post-header">
             <div class="post-meta">
               <time class="post-date">January 10, 2025</time>
-              <span class="post-reading-time">4 min read</span>
+              <span class="post-reading-time">1 min read</span>
             </div>
             <h1 class="post-title">PWAFire: Simplifying PWA Development with Clean APIs</h1>
             <p class="post-excerpt">Learn how this lightweight library makes Progressive Web App development effortless.</p>
           </header>
-          <section class="post-body"><h1>PWAFire: Simplifying PWA Development with Clean APIs</h1>
-<p>Progressive Web Apps (PWAs) are powerful, but the APIs can be verbose and inconsistent across browsers. That’s why I created <strong>PWAFire</strong> - a lightweight library that provides clean, simple APIs for common PWA features.</p>
+          <section class="post-body"><h1>Quick intro</h1>
+<p>I created <strong>PWAFire</strong> - a lightweight library that provides clean, simple APIs for common PWA features.</p>
 <h2>The Problem with Native PWA APIs</h2>
 <p>Working with native browser APIs for PWA features often means:</p>
 <ul>
@@ -279,23 +279,6 @@
 <li><strong>Complex fallback logic</strong> for unsupported features</li>
 <li><strong>Repetitive feature detection</strong> across projects</li>
 </ul>
-<pre><code class="language-javascript"><span class="token comment">// Native Web Share API - verbose and needs fallbacks</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>share<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">try</span> <span class="token punctuation">{</span>
-    <span class="token keyword">await</span> navigator<span class="token punctuation">.</span><span class="token function">share</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-      <span class="token literal-property property">title</span><span class="token operator">:</span> document<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
-      <span class="token literal-property property">url</span><span class="token operator">:</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment">// Handle error or fallback to clipboard</span>
-    <span class="token keyword">await</span> navigator<span class="token punctuation">.</span>clipboard<span class="token punctuation">.</span><span class="token function">writeText</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-  <span class="token comment">// Fallback implementation</span>
-  <span class="token keyword">await</span> navigator<span class="token punctuation">.</span>clipboard<span class="token punctuation">.</span><span class="token function">writeText</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h2>PWAFire’s Solution</h2>
 <p>PWAFire wraps these complex APIs into simple, consistent methods:</p>
 <pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> webShare <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/web-share"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> copyText <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/clipboard"</span><span class="token punctuation">;</span>
@@ -309,164 +292,14 @@
 <span class="token comment">// Or just copy to clipboard</span>
 <span class="token keyword">await</span> <span class="token function">copyText</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h2>Real-World Usage: This Blog’s Floating Action Button</h2>
-<p>The floating action button on this very blog uses PWAFire. Here’s the actual implementation:</p>
-<pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> copyText <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/clipboard"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> webShare <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/web-share"</span><span class="token punctuation">;</span>
-
-<span class="token comment">// Copy link functionality</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>copyButton<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  copyButton<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-    <span class="token keyword">await</span> <span class="token function">copyText</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment">// Show success feedback</span>
-    copyButton<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"copied"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    copyButton<span class="token punctuation">.</span>textContent <span class="token operator">=</span> <span class="token string">"Copied!"</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// Share functionality with automatic fallbacks</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>shareButton<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  shareButton<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-    <span class="token keyword">await</span> <span class="token function">webShare</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-      <span class="token literal-property property">title</span><span class="token operator">:</span> document<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
-      <span class="token literal-property property">url</span><span class="token operator">:</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>PWAFire automatically handles:</p>
+<p>Automatically handles:</p>
 <ul>
 <li><strong>Feature detection</strong> - checks if Web Share is supported</li>
 <li><strong>Graceful fallbacks</strong> - falls back to clipboard if sharing isn’t available</li>
 <li><strong>Cross-browser compatibility</strong> - works on all modern browsers</li>
 <li><strong>Error handling</strong> - provides consistent error responses</li>
 </ul>
-<h2>Key Features</h2>
-<h3>📋 Clipboard API</h3>
-<pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> copyText <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/clipboard"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">await</span> <span class="token function">copyText</span><span class="token punctuation">(</span><span class="token string">"Hello, World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h3>📤 Web Share API</h3>
-<pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> webShare <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/web-share"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">await</span> <span class="token function">webShare</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"Check this out!"</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">"Amazing content"</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">"https://example.com"</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h3>🔔 Push Notifications</h3>
-<pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> pushNotification <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/notification"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">await</span> <span class="token function">pushNotification</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"New Message"</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">body</span><span class="token operator">:</span> <span class="token string">"You have a new notification"</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h3>📱 App Installation</h3>
-<pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> installApp <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/install"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">await</span> <span class="token function">installApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h3>🔍 Feature Detection</h3>
-<p>Sometimes you need to check if a feature is supported before using it. PWAFire provides simple detection methods:</p>
-<pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> isSupported <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/detect"</span><span class="token punctuation">;</span>
-
-<span class="token comment">// Check if Web Share is supported</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">await</span> <span class="token function">isSupported</span><span class="token punctuation">(</span><span class="token string">"webShare"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment">// Show share button</span>
-  shareButton<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">"block"</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-  <span class="token comment">// Show alternative copy button</span>
-  copyButton<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">"block"</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// Check multiple features at once</span>
-<span class="token keyword">const</span> features <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">isSupported</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"webShare"</span><span class="token punctuation">,</span> <span class="token string">"clipboard"</span><span class="token punctuation">,</span> <span class="token string">"notification"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>features<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// { webShare: true, clipboard: true, notification: false }</span>
-</code></pre>
-<p><strong>Without PWAFire</strong> - Complex feature detection:</p>
-<pre><code class="language-javascript"><span class="token comment">// Manual feature detection - verbose and error-prone</span>
-<span class="token keyword">function</span> <span class="token function">checkWebShareSupport</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token string">'share'</span> <span class="token keyword">in</span> navigator <span class="token operator">&amp;&amp;</span> 
-         <span class="token keyword">typeof</span> navigator<span class="token punctuation">.</span>share <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">function</span> <span class="token function">checkClipboardSupport</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token string">'clipboard'</span> <span class="token keyword">in</span> navigator <span class="token operator">&amp;&amp;</span> 
-         <span class="token string">'writeText'</span> <span class="token keyword">in</span> navigator<span class="token punctuation">.</span>clipboard<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">function</span> <span class="token function">checkNotificationSupport</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token string">'Notification'</span> <span class="token keyword">in</span> window <span class="token operator">&amp;&amp;</span> 
-         Notification<span class="token punctuation">.</span>permission <span class="token operator">!==</span> <span class="token string">'denied'</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// Use the checks</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">checkWebShareSupport</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment">// Show share options</span>
-<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">checkClipboardSupport</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment">// Show copy option</span>
-<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-  <span class="token comment">// Show fallback</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p><strong>With PWAFire</strong> - Simple and reliable:</p>
-<pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> isSupported <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/detect"</span><span class="token punctuation">;</span>
-
-<span class="token comment">// One method for all feature detection</span>
-<span class="token keyword">const</span> canShare <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">isSupported</span><span class="token punctuation">(</span><span class="token string">"webShare"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> canCopy <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">isSupported</span><span class="token punctuation">(</span><span class="token string">"clipboard"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> canNotify <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">isSupported</span><span class="token punctuation">(</span><span class="token string">"notification"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// Build UI based on capabilities</span>
-<span class="token function">buildShareUI</span><span class="token punctuation">(</span><span class="token punctuation">{</span> canShare<span class="token punctuation">,</span> canCopy<span class="token punctuation">,</span> canNotify <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h2>Why PWAFire?</h2>
-<p><strong>🚀 Developer Experience First</strong></p>
-<ul>
-<li>Clean, intuitive APIs</li>
-<li>Consistent method signatures</li>
-<li>Automatic error handling</li>
-</ul>
-<p><strong>🌐 Cross-Platform</strong></p>
-<ul>
-<li>Works on all modern browsers</li>
-<li>Mobile and desktop support</li>
-<li>Automatic feature detection</li>
-</ul>
-<p><strong>📦 Lightweight</strong></p>
-<ul>
-<li>Tree-shakable modules</li>
-<li>Only import what you need</li>
-<li>No dependencies</li>
-</ul>
-<p><strong>🔧 Production Ready</strong></p>
-<ul>
-<li>Used in real applications</li>
-<li>Comprehensive error handling</li>
-<li>TypeScript support</li>
-</ul>
-<h2>Getting Started</h2>
-<pre><code class="language-bash">npm install pwafire
-</code></pre>
-<pre><code class="language-javascript"><span class="token comment">// Import only what you need</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> copyText <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/clipboard"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> webShare <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/web-share"</span><span class="token punctuation">;</span>
-
-<span class="token comment">// Use anywhere in your app</span>
-document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"share"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
-  <span class="token keyword">await</span> <span class="token function">webShare</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"My App"</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">url</span><span class="token operator">:</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<h2>The Future of PWA Development</h2>
-<p>PWAs are becoming the standard for modern web applications. Tools like PWAFire make it easier for developers to adopt PWA features without getting bogged down in API complexity.</p>
-<p>Whether you’re building a blog (like this one), an e-commerce site, or a complex web application, PWAFire provides the building blocks you need to create engaging, app-like experiences on the web.</p>
-<p><strong>Ready to simplify your PWA development?</strong> Check out <a href="https://github.com/pwafire/pwafire">PWAFire on GitHub</a> and start building better web experiences today.</p>
+<p><strong>Ready to simplify your PWA development?</strong> Check out <a href="https://docs.pwafire.org">docs.pwafire.org</a> and start building better web experiences today.</p>
 </section>
         </article>
       </main>

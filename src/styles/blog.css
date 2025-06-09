@@ -232,6 +232,16 @@
   font-weight: 600;
 }
 
+.post-body a {
+  color: var(--color-black);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.post-body a:hover {
+  color: var(--color-black);
+}
+
 
 .post-body ul,
 .post-body ol {
