@@ -1,7 +1,12 @@
 .welcome-section {
   position: sticky;
   top: 0;
-  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 50%, var(--color-gray-100) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-gray-50) 0%,
+    var(--color-white) 50%,
+    var(--color-gray-100) 100%
+  );
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-gray-200);
   padding: 0.75rem 2.5rem;
@@ -10,14 +15,14 @@
 }
 
 .welcome-title {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-black);
   font-family: "Playfair Display", serif;
 }
 
 .welcome-subtitle {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--color-gray-500);
   font-style: italic;
   font-family: "Inter", sans-serif;
@@ -26,7 +31,12 @@
 .sticky-nav {
   position: sticky;
   top: 0;
-  background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 50%, var(--color-gray-100) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-gray-50) 0%,
+    var(--color-white) 50%,
+    var(--color-gray-100) 100%
+  );
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-gray-200);
   padding: 0.75rem 1.5rem;
@@ -153,10 +163,10 @@
 }
 
 .post-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   font-family: "Playfair Display", serif;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.15rem;
 }
 
 .post-title a {
@@ -171,7 +181,7 @@
 
 .post-excerpt {
   color: var(--color-gray-600);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-family: "Inter", sans-serif;
   padding-bottom: 0;
 }
@@ -223,8 +233,10 @@
 .post-body {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
   padding: 1rem 0;
+  font-size: 0.95rem;
+  color: var(--color-gray-700);
 }
 
 .post-body strong {
@@ -242,11 +254,11 @@
   color: var(--color-black);
 }
 
-
 .post-body ul,
 .post-body ol {
   padding-left: var(--spacing-2xl);
-  color: var(--color-tertiary);
+  color: var(--color-gray-700);
+  font-size: 0.95rem;
 }
 
 .post-body blockquote {
@@ -386,11 +398,11 @@
   }
 
   .welcome-subtitle {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
 
   .post-header .post-title {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .post-title {
@@ -398,7 +410,44 @@
   }
 
   .post-excerpt {
+    font-size: 0.85rem;
+  }
+
+  .post-body {
     font-size: 0.9rem;
+  }
+
+  .post-body h1 {
+    font-size: 1.25rem;
+  }
+
+  .post-body h2 {
+    font-size: 1.1rem;
+  }
+
+  .post-body h3 {
+    font-size: 1rem;
+  }
+
+  .post-body h4 {
+    font-size: 0.9rem;
+  }
+
+  .post-body h5 {
+    font-size: 0.8rem;
+  }
+
+  .post-body h6 {
+    font-size: 0.9rem;
+  }
+
+  .post-body p {
+    font-size: 0.8rem;
+  }
+
+  .post-body ul,
+  .post-body ol {
+    font-size: 0.75rem;
   }
 
   .code-block-container {
@@ -407,7 +456,7 @@
   }
 
   pre {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     padding: 1rem;
     border-radius: 0;
   }

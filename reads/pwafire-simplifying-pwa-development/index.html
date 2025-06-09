@@ -283,7 +283,7 @@
 <pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> webShare <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/web-share"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> copyText <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/clipboard"</span><span class="token punctuation">;</span>
 
-<span class="token comment">// Clean, simple sharing with automatic fallbacks</span>
+<span class="token comment">// e.g share stuff through native os share dialog</span>
 <span class="token keyword">await</span> <span class="token function">webShare</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   <span class="token literal-property property">title</span><span class="token operator">:</span> document<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
   <span class="token literal-property property">url</span><span class="token operator">:</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href
@@ -295,7 +295,6 @@
 <p>Automatically handles:</p>
 <ul>
 <li><strong>Feature detection</strong> - checks if Web Share is supported</li>
-<li><strong>Graceful fallbacks</strong> - falls back to clipboard if sharing isn’t available</li>
 <li><strong>Cross-browser compatibility</strong> - works on all modern browsers</li>
 <li><strong>Error handling</strong> - provides consistent error responses</li>
 </ul>

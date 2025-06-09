@@ -17,7 +17,7 @@ PWAFire wraps these complex APIs into simple, consistent methods:
 import { webShare } from "pwafire/web-share";
 import { copyText } from "pwafire/clipboard";
 
-// Clean, simple sharing with automatic fallbacks
+// e.g share stuff through native os share dialog
 await webShare({
   title: document.title,
   url: window.location.href
@@ -30,7 +30,6 @@ await copyText(window.location.href);
 Automatically handles:
 
 - **Feature detection** - checks if Web Share is supported
-- **Graceful fallbacks** - falls back to clipboard if sharing isn't available
 - **Cross-browser compatibility** - works on all modern browsers
 - **Error handling** - provides consistent error responses
 

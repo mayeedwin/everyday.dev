@@ -169,22 +169,22 @@ h6 {
 }
 
 h1 {
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-2xl);
   font-weight: 600;
 }
 
 h2 {
-  font-size: var(--font-size-2xl);
-  font-weight: 500;
-}
-
-h3 {
   font-size: var(--font-size-xl);
   font-weight: 500;
 }
 
-h4 {
+h3 {
   font-size: var(--font-size-lg);
+  font-weight: 500;
+}
+
+h4 {
+  font-size: var(--font-size-base);
   font-weight: 500;
 }
 
@@ -200,7 +200,7 @@ h6 {
 
 p {
   color: var(--color-tertiary);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
 }
 
 a {
@@ -405,7 +405,6 @@ pre {
 
 .profile-bio {
   font-size: 0.85rem;
-  line-height: 1.5;
   color: #4b5563;
   max-width: 260px;
 }
@@ -415,7 +414,6 @@ pre {
   font-size: 3.2em;
   font-weight: 700;
   color: var(--color-black);
-  line-height: 0.8;
   margin-right: 0.08em;
   margin-top: 0.1em;
 }
@@ -549,7 +547,7 @@ pre {
   z-index: 10;
   margin: 0 auto;
   margin-bottom: var(--spacing-3xl);
-  width: 80%;
+  width: 95%;
 }
 
 .speaking-cta a {
@@ -624,7 +622,6 @@ pre {
   font-weight: 600;
   color: var(--color-primary);
   margin-bottom: var(--spacing-xs);
-  line-height: 1.3;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
@@ -635,7 +632,6 @@ pre {
 .talk-description {
   font-size: var(--font-size-sm);
   color: var(--color-tertiary);
-  line-height: 1.4;
   margin-bottom: var(--spacing-md);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -1260,7 +1256,6 @@ button:focus,
 
   .profile-bio::first-letter {
     font-size: 2.8em;
-    line-height: 0.8;
     margin-right: 0.08em;
     margin-top: 0.1em;
   }
@@ -1339,12 +1334,10 @@ button:focus,
 
   .profile-bio {
     font-size: 0.75rem;
-    line-height: 1.4;
   }
 
   .profile-bio::first-letter {
     font-size: 2em;
-    line-height: 0.8;
     margin-right: 0.08em;
     margin-top: 0.1em;
   }
@@ -1483,6 +1476,5 @@ button:focus,
 
   body {
     font-size: 12pt;
-    line-height: 1.4;
   }
 }
