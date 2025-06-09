@@ -1355,7 +1355,112 @@ button:focus,
   outline: none;
 }
 
+.floating-actions {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.fab-trigger {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.fab-trigger:hover {
+  background: var(--color-secondary);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.fab-menu {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.floating-actions.open .fab-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.fab-action {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--color-white);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  min-width: 90px;
+}
+
+.fab-action:hover {
+  background: var(--color-surface);
+  border-color: var(--color-primary);
+  transform: translateX(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.fab-action svg {
+  flex-shrink: 0;
+}
+
+.copy-link.copied {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+@media (max-width: 768px) {
+  .floating-actions {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .fab-trigger {
+    width: 40px;
+    height: 40px;
+  }
+
+  .fab-action {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.6rem;
+    min-width: 80px;
+  }
+}
+
 @media print {
+  .floating-actions {
+    display: none;
+  }
+
   .header,
   .profile-social {
     display: none;

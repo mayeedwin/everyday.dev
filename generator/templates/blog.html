@@ -1,165 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{excerpt}} - By {{authorName}}, {{authorJobTitle}}" />
+    <meta
+      name="description"
+      content="{{excerpt}} - By {{authorName}}, {{authorJobTitle}}"
+    />
     <meta name="author" content="{{authorName}}" />
-    <meta name="keywords" content="{{title}}, {{seoKeywords}}, coding tutorial, programming" />
+    <meta
+      name="keywords"
+      content="{{title}}, {{seoKeywords}}, coding tutorial, programming"
+    />
 
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{title}} - by {{authorName}}" />
-    <meta property="og:description" content="{{excerpt}} - By {{authorJobTitle}} {{authorName}}" />
+    <meta
+      property="og:description"
+      content="{{excerpt}} - By {{authorJobTitle}} {{authorName}}"
+    />
     <meta property="og:image" content="{{siteBanner}}" />
 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="{{title}} - by {{authorName}}" />
-    <meta property="twitter:description" content="{{excerpt}} - By {{authorJobTitle}} {{authorName}}" />
+    <meta
+      property="twitter:description"
+      content="{{excerpt}} - By {{authorJobTitle}} {{authorName}}"
+    />
     <meta property="twitter:image" content="{{siteBanner}}" />
 
     <title>{{title}} - {{siteTitle}}</title>
-    <link rel="icon" type="image/x-icon" href="{{siteFavicon}}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css">
+    <link rel="icon" type="image/x-icon" href="{{siteFavicon}}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css"
+    />
     <link rel="stylesheet" href="/src/styles/main.css" />
     <link rel="stylesheet" href="/src/styles/blog.css" />
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "{{title}}",
-      "description": "{{excerpt}}",
-      "author": {
-        "@type": "Person",
-        "name": "{{authorName}}",
-        "jobTitle": "{{authorJobTitle}}",
-        "url": "{{siteUrl}}",
-        "sameAs": {{authorSocialLinksJson}}
-      },
-      "publisher": {
-        "@type": "Person",
-        "name": "{{authorName}}",
-        "jobTitle": "{{authorJobTitle}}"
-      },
-      "datePublished": "{{dateISO}}",
-      "url": "{{siteUrl}}/reads/{{slug}}/"
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{title}}",
+        "description": "{{excerpt}}",
+        "author": {
+          "@type": "Person",
+          "name": "{{authorName}}",
+          "jobTitle": "{{authorJobTitle}}",
+          "url": "{{siteUrl}}",
+          "sameAs": {{authorSocialLinksJson}}
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "{{authorName}}",
+          "jobTitle": "{{authorJobTitle}}"
+        },
+        "datePublished": "{{dateISO}}",
+        "url": "{{siteUrl}}/reads/{{slug}}/"
+      }
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    
+
     <!-- Mobile Header -->
     <header class="mobile-header">
-        <div class="mobile-profile">
-            <img src="{{authorAvatar}}" alt="{{authorName}}" class="mobile-avatar" />
-            <div class="mobile-profile-info">
-                <h2>{{authorName}}</h2>
-                <p>{{authorJobTitle}}</p>
-            </div>
+      <div class="mobile-profile">
+        <img
+          src="{{authorAvatar}}"
+          alt="{{authorName}}"
+          class="mobile-avatar"
+        />
+        <div class="mobile-profile-info">
+          <h2>{{authorName}}</h2>
+          <p>{{authorJobTitle}}</p>
         </div>
-        <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
-            <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-            <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
+      </div>
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+        <svg
+          class="hamburger-icon"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg
+          class="close-icon"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
     </header>
 
     <!-- Desktop Header -->
     <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <a href="/" class="nav-logo">{{siteName}}</a>
-                <ul class="nav-menu">
-                    {{navigation}}
-                </ul>
-            </div>
-        </nav>
+      <nav class="nav">
+        <div class="nav-container">
+          <a href="/" class="nav-logo">{{siteName}}</a>
+          <ul class="nav-menu">
+            {{navigation}}
+          </ul>
+        </div>
+      </nav>
     </header>
 
     <!-- Sidebar Overlay -->
     <div class="sidebar-overlay"></div>
 
     <div class="app-container">
-        <aside class="profile-sidebar">
-            <div class="profile-content">
-                <div class="profile-avatar">
-                    <img src="{{authorAvatar}}" alt="{{authorName}} - {{authorJobTitle}}" class="avatar-img" />
-                    <div class="avatar-ring"></div>
-                </div>
+      <aside class="profile-sidebar">
+        <div class="profile-content">
+          <div class="profile-avatar">
+            <img
+              src="{{authorAvatar}}"
+              alt="{{authorName}} - {{authorJobTitle}}"
+              class="avatar-img"
+            />
+            <div class="avatar-ring"></div>
+          </div>
 
-                <div class="profile-info">
-                    <h1 class="profile-name">{{authorName}}</h1>
-                    <p class="profile-title">{{authorTitle}}</p>
-                    <p class="profile-bio">{{authorBio}}</p>
-                    <div class="profile-recognition">
-                        <a href="https://developers.google.com/community/experts/directory" class="gde-badge" target="_blank" rel="noopener noreferrer">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                            </svg>
-                            <span>{{authorRecognition}}</span>
-                        </a>
-                    </div>
-                </div>
-
-                <nav class="profile-nav">
-                    <ul class="nav-links">
-                        {{profileNavigation}}
-                    </ul>
-                </nav>
-
-                <div class="profile-social">
-                    {{socialLinks}}
-                </div>
-
-                <div class="profile-copyright">
-                    © {{currentYear}} {{authorName}}. All rights reserved.
-                </div>
+          <div class="profile-info">
+            <h1 class="profile-name">{{authorName}}</h1>
+            <p class="profile-title">{{authorTitle}}</p>
+            <p class="profile-bio">{{authorBio}}</p>
+            <div class="profile-recognition">
+              <a
+                href="https://developers.google.com/community/experts/directory"
+                class="gde-badge"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                  />
+                </svg>
+                <span>{{authorRecognition}}</span>
+              </a>
             </div>
-        </aside>
+          </div>
 
-        <main class="content-area" id="main-content">
-            <nav class="sticky-nav">
-                <div class="sticky-nav-content">
-                    <a href="/" class="back-link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M19 12H5"/>
-                            <path d="m12 19-7-7 7-7"/>
-                        </svg>
-                    </a>
-                    <div class="current-article">
-                        <span class="article-indicator">Reading:</span>
-                        <span class="article-title">{{title}}</span>
-                    </div>
-                </div>
-            </nav>
+          <nav class="profile-nav">
+            <ul class="nav-links">
+              {{profileNavigation}}
+            </ul>
+          </nav>
 
-            <article class="blog-post">
-                <header class="post-header">
-                    <div class="post-meta">
-                        <time class="post-date">{{date}}</time>
-                        <span class="post-reading-time">{{readingTime}}</span>
-                    </div>
-                    <h1 class="post-title">{{title}}</h1>
-                    <p class="post-excerpt">{{excerpt}}</p>
-                </header>
+          <div class="profile-social">{{socialLinks}}</div>
 
-                <div class="post-body">
-                    {{content}}
-                </div>
-            </article>
-        </main>
+          <div class="profile-copyright">
+            © {{currentYear}} {{authorName}}. All rights reserved.
+          </div>
+        </div>
+      </aside>
+
+      <main class="content-area" id="main-content">
+        <nav class="sticky-nav">
+          <div class="sticky-nav-content">
+            <a href="/" class="back-link">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M19 12H5" />
+                <path d="m12 19-7-7 7-7" />
+              </svg>
+            </a>
+            <div class="current-article">
+              <span class="article-indicator">Reading:</span>
+              <span class="article-title">{{title}}</span>
+            </div>
+          </div>
+        </nav>
+
+        <article class="blog-post">
+          <header class="post-header">
+            <div class="post-meta">
+              <time class="post-date">{{date}}</time>
+              <span class="post-reading-time">{{readingTime}}</span>
+            </div>
+            <h1 class="post-title">{{title}}</h1>
+            <p class="post-excerpt">{{excerpt}}</p>
+          </header>
+          <section class="post-body">{{content}}</section>
+        </article>
+      </main>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="floating-actions">
+      <button class="fab-trigger" aria-label="Share options">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"
+          />
+        </svg>
+      </button>
+      <div class="fab-menu">
+        <button class="fab-action copy-link" aria-label="Copy link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+            />
+          </svg>
+          <span>Copy Link</span>
+        </button>
+        <button class="fab-action share-native" aria-label="Share">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"
+            />
+          </svg>
+          <span>Share</span>
+        </button>
+      </div>
     </div>
 
     <script type="module" src="/src/main.ts"></script>
-</body>
+  </body>
 </html>
