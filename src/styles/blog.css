@@ -393,71 +393,8 @@
 }
 
 @media (max-width: 768px) {
-  .welcome-title {
-    font-size: 1.2rem;
-  }
-
-  .welcome-subtitle {
-    font-size: 0.85rem;
-  }
-
-  .post-header .post-title {
-    font-size: 1.3rem;
-  }
-
-  .post-title {
-    font-size: 1.1rem;
-  }
-
-  .post-excerpt {
-    font-size: 0.85rem;
-  }
-
-  .post-body {
-    font-size: 0.9rem;
-  }
-
-  .post-body h1 {
-    font-size: 1.25rem;
-  }
-
-  .post-body h2 {
-    font-size: 1.1rem;
-  }
-
-  .post-body h3 {
-    font-size: 1rem;
-  }
-
-  .post-body h4 {
-    font-size: 0.9rem;
-  }
-
-  .post-body h5 {
-    font-size: 0.8rem;
-  }
-
-  .post-body h6 {
-    font-size: 0.9rem;
-  }
-
-  .post-body p {
-    font-size: 0.8rem;
-  }
-
-  .post-body ul,
-  .post-body ol {
-    font-size: 0.75rem;
-  }
-
   .code-block-container {
     padding: 1rem 0;
-    border-radius: 0;
-  }
-
-  pre {
-    font-size: 0.75rem;
-    padding: 1rem;
     border-radius: 0;
   }
 
@@ -477,7 +414,7 @@
   }
 
   .post-card {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .post-header {
