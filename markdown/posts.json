@@ -1,16 +1,16 @@
 {
   "posts": [
     {
-      "slug": "vibe-coding",
-      "title": "Vibe Coding: The Brutal Reality for Software Engineers",
-      "excerpt": "AI doesn't replace expertise. It amplifies it. If you don't know what good code looks like, AI will help you ship garbage faster.",
-      "date": "2025-01-07"
+      "slug": "squash-pushed-commits-into-one-single-commit",
+      "title": "Squash Pushed Commits into One Single Commit",
+      "excerpt": "If you have recently worked on a huge project, you'd find yourself having committed too many tiny commits, just to be safe with the very many changes you are making, whether while vibe coding or not.",
+      "date": "2025-06-10"
     },
     {
-      "slug": "clean-code-fifteen-minutes",
-      "title": "Clean Code: The 15-Minute Rule",
-      "excerpt": "If you can't explain your code in 15 minutes, it's probably too complex.",
-      "date": "2025-01-06"
+      "slug": "vibe-coding",
+      "title": "The Brutal Reality of Vibe Coding for Software Engineers",
+      "excerpt": "AI doesn't replace expertise. It amplifies it. If you don't know what good code looks like, AI will help you ship garbage faster.",
+      "date": "2025-01-07"
     }
   ]
 }

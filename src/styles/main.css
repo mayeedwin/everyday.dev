@@ -46,6 +46,20 @@
   --color-selection-background: #e5e7eb;
   --color-selection-text: #000000;
 
+  /* Additional frequently used colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #000000;
+
   --gradient-sticky: linear-gradient(
     135deg,
     var(--color-surface) 0%,
@@ -59,10 +73,7 @@
     var(--color-lighter) 100%
   );
 
-  --font-family-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", sans-serif;
-  --font-family-heading: "Playfair Display", serif;
-  --font-family-code: "JetBrains Mono", "Monaco", "Consolas", monospace;
+  --font-family: "PT Serif", Georgia, serif;
 
   --font-size-xs: 0.7rem;
   --font-size-sm: 0.8rem;
@@ -110,6 +121,7 @@
   box-sizing: border-box;
   line-height: 1.5;
   -webkit-tap-highlight-color: transparent;
+  font-family: var(--font-family);
 }
 
 html {
@@ -122,13 +134,11 @@ html {
 }
 
 body {
-  font-family: var(--font-family-primary);
   color: var(--color-secondary);
   background: var(--color-background);
   font-size: var(--font-size-base);
   font-weight: 400;
   height: 100vh;
-  margin: 0;
   overflow: hidden;
   transform: translateZ(0);
   will-change: auto;
@@ -155,16 +165,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-heading);
-  font-weight: 500;
-  padding-bottom: var(--spacing-sm);
   color: var(--color-primary);
 }
 
 h1 {
   font-size: var(--font-size-3xl);
   font-weight: 600;
-  color: var(--color-primary);
 }
 
 h2 {
@@ -177,9 +183,24 @@ h3 {
   font-weight: 500;
 }
 
+h4 {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+}
+
+h5 {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+h6 {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
 p {
   color: var(--color-tertiary);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-lg);
 }
 
 a {
@@ -200,7 +221,7 @@ pre {
 .header {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--color-gray-200);
   position: fixed;
   top: 0;
   left: 0;
@@ -226,8 +247,7 @@ pre {
 .nav-logo {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #000000;
-  font-family: "Playfair Display", serif;
+  color: var(--color-black);
 }
 
 .nav-menu {
@@ -237,7 +257,7 @@ pre {
 }
 
 .nav-link {
-  color: #6b7280;
+  color: var(--color-gray-500);
   font-weight: 500;
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -250,11 +270,11 @@ pre {
 }
 
 .nav-link:hover {
-  color: #000000;
+  color: var(--color-black);
 }
 
 .nav-link.active {
-  color: #000000;
+  color: var(--color-black);
   font-weight: 600;
 }
 
@@ -263,16 +283,16 @@ pre {
   margin: 60px auto 0;
   display: flex;
   height: calc(100vh - 60px);
-  background: #ffffff;
+  background: var(--color-white);
   overflow: hidden;
-  border-left: 1px solid #e5e7eb;
-  border-right: 1px solid #e5e7eb;
+  border-left: 1px solid var(--color-gray-200);
+  border-right: 1px solid var(--color-gray-200);
 }
 
 .profile-sidebar {
   width: 320px;
-  background: #f9fafb;
-  border-right: 1px solid #e5e7eb;
+  background: var(--color-gray-50);
+  border-right: 1px solid var(--color-gray-200);
   flex-shrink: 0;
   height: calc(100vh - 60px);
   overflow: hidden;
@@ -333,12 +353,12 @@ pre {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #000000;
+  color: var(--color-black);
 }
 
 .profile-title {
   font-size: 0.9rem;
-  color: #6b7280;
+  color: var(--color-gray-500);
   margin-bottom: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -361,7 +381,6 @@ pre {
   font-size: 0.7rem;
   font-weight: 500;
   border: 1px solid rgba(55, 65, 81, 0.3);
-  font-family: "Google Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   transition: all 0.2s ease;
@@ -395,7 +414,7 @@ pre {
   float: left;
   font-size: 3.2em;
   font-weight: 700;
-  color: #000000;
+  color: var(--color-black);
   line-height: 0.8;
   margin-right: 0.08em;
   margin-top: 0.1em;
@@ -457,16 +476,16 @@ pre {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: #ffffff;
+  background: var(--color-white);
   border: 1px solid #d1d5db;
   border-radius: 6px;
-  color: #6b7280;
+  color: var(--color-gray-500);
   transition: all 0.3s ease;
 }
 
 .social-link:hover {
   background: #f3f4f6;
-  color: #000000;
+  color: var(--color-black);
   border-color: #9ca3af;
   transform: translateY(-1px);
 }
@@ -483,7 +502,7 @@ pre {
 
 .content-area {
   flex: 1;
-  background: #ffffff;
+  background: var(--color-white);
   overflow-y: auto;
   height: calc(100vh - 60px);
   transition: opacity 0.15s ease-in-out;
@@ -518,14 +537,19 @@ pre {
 }
 
 .speaking-cta {
+  position: sticky;
+  top: var(--spacing-lg);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-2xl);
+  padding: var(--spacing-lg);
   text-align: center;
-  margin-bottom: var(--spacing-3xl);
   font-size: var(--font-size-sm);
   color: var(--color-tertiary);
+  z-index: 10;
+  margin: 0 auto;
+  margin-bottom: var(--spacing-3xl);
+  width: 80%;
 }
 
 .speaking-cta a {
@@ -577,17 +601,9 @@ pre {
 }
 
 .talk-date {
-  font-size: var(--font-size-xs);
-  color: var(--color-primary);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background: var(--color-background);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-sm);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  display: inline-block;
-  width: fit-content;
+  color: var(--color-gray-500);
+  font-size: 0.75rem;
+  font-weight: 400;
 }
 
 .talk-location {
@@ -723,7 +739,7 @@ pre {
 .loading {
   text-align: center;
   padding: 3rem 0;
-  color: #6b7280;
+  color: var(--color-gray-500);
 }
 
 .spinner {
@@ -756,7 +772,7 @@ pre {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f9fafb;
+  background: var(--color-gray-50);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -920,15 +936,11 @@ pre {
 .mobile-profile-info h2 {
   font-size: 1rem;
   font-weight: 600;
-  margin: 0;
-  padding: 0;
   color: var(--color-primary);
 }
 
 .mobile-profile-info p {
   font-size: 0.75rem;
-  margin: 0;
-  padding: 0;
   color: var(--color-muted);
 }
 
@@ -1099,7 +1111,7 @@ button:focus,
     width: 100%;
     max-width: 300px;
     height: 100vh;
-    background: #ffffff;
+    background: var(--color-white);
     z-index: 1001;
     overflow-y: auto;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
