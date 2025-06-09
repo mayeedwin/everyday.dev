@@ -1,15 +1,21 @@
 {
   "posts": [
     {
+      "slug": "pwafire-simplifying-pwa-development",
+      "title": "PWAFire: Simplifying PWA Development with Clean APIs",
+      "excerpt": "Learn how this lightweight library makes Progressive Web App development effortless.",
+      "date": "2025-01-10"
+    },
+    {
       "slug": "squash-pushed-commits-into-one-single-commit",
       "title": "Squash Pushed Commits into One Single Commit",
-      "excerpt": "If you have recently worked on a huge project, you'd find yourself having committed too many tiny commits, just to be safe with the very many changes you are making, whether while vibe coding or not.",
+      "excerpt": "Quickly squash your pushed commits into one single commit with simple git commands",
       "date": "2025-06-10"
     },
     {
-      "slug": "vibe-coding",
+      "slug": "the-brutal-reality-of-vibe-coding-for-software-engineers",
       "title": "The Brutal Reality of Vibe Coding for Software Engineers",
-      "excerpt": "AI doesn't replace expertise. It amplifies it. If you don't know what good code looks like, AI will help you ship garbage faster.",
+      "excerpt": "AI doesn't replace expertise. It amplifies it. But how do you best use it to get the best out of it?",
       "date": "2025-01-07"
     }
   ]

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn how this lightweight library makes Progressive Web App development effortless. - By Maye Edwin, Software Engineer and Google Developer Expert in Web Technologies"
+    />
+    <meta name="author" content="Maye Edwin" />
+    <meta
+      name="keywords"
+      content="PWAFire: Simplifying PWA Development with Clean APIs, Maye Edwin, everyday.dev, Software Engineer, Google Developer Expert, Web Technologies, JavaScript, TypeScript, React, Node.js, coding journal, developer blog, programming tutorials, dev life, daily discoveries, coding tutorial, programming"
+    />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="PWAFire: Simplifying PWA Development with Clean APIs - by Maye Edwin" />
+    <meta
+      property="og:description"
+      content="Learn how this lightweight library makes Progressive Web App development effortless. - By Software Engineer and Google Developer Expert in Web Technologies Maye Edwin"
+    />
+    <meta property="og:image" content="/images/everydaydev_twitter_banner.jpeg" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="PWAFire: Simplifying PWA Development with Clean APIs - by Maye Edwin" />
+    <meta
+      property="twitter:description"
+      content="Learn how this lightweight library makes Progressive Web App development effortless. - By Software Engineer and Google Developer Expert in Web Technologies Maye Edwin"
+    />
+    <meta property="twitter:image" content="/images/everydaydev_twitter_banner.jpeg" />
+
+    <title>PWAFire: Simplifying PWA Development with Clean APIs - A journal by Maye Edwin</title>
+    <link rel="icon" type="image/x-icon" href="/images/ed_logo.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css"
+    />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <link rel="stylesheet" href="/src/styles/blog.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "PWAFire: Simplifying PWA Development with Clean APIs",
+        "description": "Learn how this lightweight library makes Progressive Web App development effortless.",
+        "author": {
+          "@type": "Person",
+          "name": "Maye Edwin",
+          "jobTitle": "Software Engineer and Google Developer Expert in Web Technologies",
+          "url": "https://everyday.dev",
+          "sameAs": ["https://github.com/mayeedwin","https://twitter.com/mayeedwin1","https://linkedin.com/in/mayeedwin"]
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Maye Edwin",
+          "jobTitle": "Software Engineer and Google Developer Expert in Web Technologies"
+        },
+        "datePublished": "2025-01-10",
+        "url": "https://everyday.dev/reads/pwafire-simplifying-pwa-development/"
+      }
+    </script>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+      <div class="mobile-profile">
+        <img
+          src="/images/maye-edwin.jpg"
+          alt="Maye Edwin"
+          class="mobile-avatar"
+        />
+        <div class="mobile-profile-info">
+          <h2>Maye Edwin</h2>
+          <p>Google Developer Expert - Web Technologies</p>
+        </div>
+      </div>
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+        <svg
+          class="hamburger-icon"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg
+          class="close-icon"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Desktop Header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-container">
+          <a href="/" class="nav-logo">everyday.dev</a>
+          <ul class="nav-menu">
+            <li class="nav-item">
+        <a href="/" class="nav-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+           </svg>
+          <span>HOME</span>
+        </a>
+    </li>
+                    <li class="nav-item">
+        <a href="/speaking/" class="nav-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+           </svg>
+          <span>SPEAKING</span>
+        </a>
+    </li>
+                    <li class="nav-item">
+        <a href="https://www.youtube.com/@devmaye" class="nav-link" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+             <path d="M8 5v14l11-7z"/>
+           </svg>
+          <span>WATCH</span>
+        </a>
+    </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay"></div>
+
+    <div class="app-container">
+      <aside class="profile-sidebar">
+        <div class="profile-content">
+          <div class="profile-avatar">
+            <img
+              src="/images/maye-edwin.jpg"
+              alt="Maye Edwin - Software Engineer and Google Developer Expert in Web Technologies"
+              class="avatar-img"
+            />
+            <div class="avatar-ring"></div>
+          </div>
+
+          <div class="profile-info">
+            <h1 class="profile-name">Maye Edwin</h1>
+            <p class="profile-title">Software Engineer</p>
+            <p class="profile-bio">Everyday is my coding journal, where I'm sharing the real dev life - bugs, breakthroughs, and everything in between.</p>
+            <div class="profile-recognition">
+              <a
+                href="https://developers.google.com/community/experts/directory"
+                class="gde-badge"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                  />
+                </svg>
+                <span>Google Developer Expert - Web Technologies</span>
+              </a>
+            </div>
+          </div>
+
+          <nav class="profile-nav">
+            <ul class="nav-links">
+              <li><a href="/" class="nav-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+           </svg>
+        <span>HOME</span>
+      </a></li>
+                        <li><a href="/speaking/" class="nav-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+           </svg>
+        <span>SPEAKING</span>
+      </a></li>
+                        <li><a href="https://www.youtube.com/@devmaye" class="nav-link" target="_blank" rel="noopener noreferrer">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+             <path d="M8 5v14l11-7z"/>
+           </svg>
+        <span>WATCH</span>
+      </a></li>
+            </ul>
+          </nav>
+
+          <div class="profile-social"><a href="https://github.com/mayeedwin" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/mayeedwin1" class="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/mayeedwin" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a></div>
+
+          <div class="profile-copyright">
+            © 2025 Maye Edwin. All rights reserved.
+          </div>
+        </div>
+      </aside>
+
+      <main class="content-area" id="main-content">
+        <nav class="sticky-nav">
+          <div class="sticky-nav-content">
+            <a href="/" class="back-link">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M19 12H5" />
+                <path d="m12 19-7-7 7-7" />
+              </svg>
+            </a>
+            <div class="current-article">
+              <span class="article-indicator">Reading:</span>
+              <span class="article-title">PWAFire: Simplifying PWA Development with Clean APIs</span>
+            </div>
+          </div>
+        </nav>
+
+        <article class="blog-post">
+          <header class="post-header">
+            <div class="post-meta">
+              <time class="post-date">January 10, 2025</time>
+              <span class="post-reading-time">4 min read</span>
+            </div>
+            <h1 class="post-title">PWAFire: Simplifying PWA Development with Clean APIs</h1>
+            <p class="post-excerpt">Learn how this lightweight library makes Progressive Web App development effortless.</p>
+          </header>
+          <section class="post-body"><h1>PWAFire: Simplifying PWA Development with Clean APIs</h1>
+<p>Progressive Web Apps (PWAs) are powerful, but the APIs can be verbose and inconsistent across browsers. That’s why I created <strong>PWAFire</strong> - a lightweight library that provides clean, simple APIs for common PWA features.</p>
+<h2>The Problem with Native PWA APIs</h2>
+<p>Working with native browser APIs for PWA features often means:</p>
+<ul>
+<li><strong>Verbose boilerplate code</strong> for simple tasks</li>
+<li><strong>Inconsistent browser support</strong> and quirks</li>
+<li><strong>Complex fallback logic</strong> for unsupported features</li>
+<li><strong>Repetitive feature detection</strong> across projects</li>
+</ul>
+<pre><code class="language-javascript"><span class="token comment">// Native Web Share API - verbose and needs fallbacks</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>share<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">await</span> navigator<span class="token punctuation">.</span><span class="token function">share</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">title</span><span class="token operator">:</span> document<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
+      <span class="token literal-property property">url</span><span class="token operator">:</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Handle error or fallback to clipboard</span>
+    <span class="token keyword">await</span> navigator<span class="token punctuation">.</span>clipboard<span class="token punctuation">.</span><span class="token function">writeText</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Fallback implementation</span>
+  <span class="token keyword">await</span> navigator<span class="token punctuation">.</span>clipboard<span class="token punctuation">.</span><span class="token function">writeText</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2>PWAFire’s Solution</h2>
+<p>PWAFire wraps these complex APIs into simple, consistent methods:</p>
+<pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> webShare <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/web-share"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> copyText <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/clipboard"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Clean, simple sharing with automatic fallbacks</span>
+<span class="token keyword">await</span> <span class="token function">webShare</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">title</span><span class="token operator">:</span> document<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
+  <span class="token literal-property property">url</span><span class="token operator">:</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Or just copy to clipboard</span>
+<span class="token keyword">await</span> <span class="token function">copyText</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2>Real-World Usage: This Blog’s Floating Action Button</h2>
+<p>The floating action button on this very blog uses PWAFire. Here’s the actual implementation:</p>
+<pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> copyText <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/clipboard"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> webShare <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/web-share"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Copy link functionality</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>copyButton<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  copyButton<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">await</span> <span class="token function">copyText</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// Show success feedback</span>
+    copyButton<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"copied"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    copyButton<span class="token punctuation">.</span>textContent <span class="token operator">=</span> <span class="token string">"Copied!"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Share functionality with automatic fallbacks</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>shareButton<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  shareButton<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">await</span> <span class="token function">webShare</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">title</span><span class="token operator">:</span> document<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
+      <span class="token literal-property property">url</span><span class="token operator">:</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>PWAFire automatically handles:</p>
+<ul>
+<li><strong>Feature detection</strong> - checks if Web Share is supported</li>
+<li><strong>Graceful fallbacks</strong> - falls back to clipboard if sharing isn’t available</li>
+<li><strong>Cross-browser compatibility</strong> - works on all modern browsers</li>
+<li><strong>Error handling</strong> - provides consistent error responses</li>
+</ul>
+<h2>Key Features</h2>
+<h3>📋 Clipboard API</h3>
+<pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> copyText <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/clipboard"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">await</span> <span class="token function">copyText</span><span class="token punctuation">(</span><span class="token string">"Hello, World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3>📤 Web Share API</h3>
+<pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> webShare <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/web-share"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">await</span> <span class="token function">webShare</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"Check this out!"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">"Amazing content"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">"https://example.com"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3>🔔 Push Notifications</h3>
+<pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> pushNotification <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/notification"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">await</span> <span class="token function">pushNotification</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"New Message"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">body</span><span class="token operator">:</span> <span class="token string">"You have a new notification"</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3>📱 App Installation</h3>
+<pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> installApp <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/install"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">await</span> <span class="token function">installApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3>🔍 Feature Detection</h3>
+<p>Sometimes you need to check if a feature is supported before using it. PWAFire provides simple detection methods:</p>
+<pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> isSupported <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/detect"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Check if Web Share is supported</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">await</span> <span class="token function">isSupported</span><span class="token punctuation">(</span><span class="token string">"webShare"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Show share button</span>
+  shareButton<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">"block"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Show alternative copy button</span>
+  copyButton<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">"block"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Check multiple features at once</span>
+<span class="token keyword">const</span> features <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">isSupported</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"webShare"</span><span class="token punctuation">,</span> <span class="token string">"clipboard"</span><span class="token punctuation">,</span> <span class="token string">"notification"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>features<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// { webShare: true, clipboard: true, notification: false }</span>
+</code></pre>
+<p><strong>Without PWAFire</strong> - Complex feature detection:</p>
+<pre><code class="language-javascript"><span class="token comment">// Manual feature detection - verbose and error-prone</span>
+<span class="token keyword">function</span> <span class="token function">checkWebShareSupport</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token string">'share'</span> <span class="token keyword">in</span> navigator <span class="token operator">&amp;&amp;</span> 
+         <span class="token keyword">typeof</span> navigator<span class="token punctuation">.</span>share <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">checkClipboardSupport</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token string">'clipboard'</span> <span class="token keyword">in</span> navigator <span class="token operator">&amp;&amp;</span> 
+         <span class="token string">'writeText'</span> <span class="token keyword">in</span> navigator<span class="token punctuation">.</span>clipboard<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">checkNotificationSupport</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token string">'Notification'</span> <span class="token keyword">in</span> window <span class="token operator">&amp;&amp;</span> 
+         Notification<span class="token punctuation">.</span>permission <span class="token operator">!==</span> <span class="token string">'denied'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Use the checks</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">checkWebShareSupport</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Show share options</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">checkClipboardSupport</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Show copy option</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Show fallback</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>With PWAFire</strong> - Simple and reliable:</p>
+<pre><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> isSupported <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/detect"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// One method for all feature detection</span>
+<span class="token keyword">const</span> canShare <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">isSupported</span><span class="token punctuation">(</span><span class="token string">"webShare"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> canCopy <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">isSupported</span><span class="token punctuation">(</span><span class="token string">"clipboard"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> canNotify <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">isSupported</span><span class="token punctuation">(</span><span class="token string">"notification"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Build UI based on capabilities</span>
+<span class="token function">buildShareUI</span><span class="token punctuation">(</span><span class="token punctuation">{</span> canShare<span class="token punctuation">,</span> canCopy<span class="token punctuation">,</span> canNotify <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2>Why PWAFire?</h2>
+<p><strong>🚀 Developer Experience First</strong></p>
+<ul>
+<li>Clean, intuitive APIs</li>
+<li>Consistent method signatures</li>
+<li>Automatic error handling</li>
+</ul>
+<p><strong>🌐 Cross-Platform</strong></p>
+<ul>
+<li>Works on all modern browsers</li>
+<li>Mobile and desktop support</li>
+<li>Automatic feature detection</li>
+</ul>
+<p><strong>📦 Lightweight</strong></p>
+<ul>
+<li>Tree-shakable modules</li>
+<li>Only import what you need</li>
+<li>No dependencies</li>
+</ul>
+<p><strong>🔧 Production Ready</strong></p>
+<ul>
+<li>Used in real applications</li>
+<li>Comprehensive error handling</li>
+<li>TypeScript support</li>
+</ul>
+<h2>Getting Started</h2>
+<pre><code class="language-bash">npm install pwafire
+</code></pre>
+<pre><code class="language-javascript"><span class="token comment">// Import only what you need</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> copyText <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/clipboard"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> webShare <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"pwafire/web-share"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Use anywhere in your app</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"share"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> <span class="token function">webShare</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">"My App"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">url</span><span class="token operator">:</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2>The Future of PWA Development</h2>
+<p>PWAs are becoming the standard for modern web applications. Tools like PWAFire make it easier for developers to adopt PWA features without getting bogged down in API complexity.</p>
+<p>Whether you’re building a blog (like this one), an e-commerce site, or a complex web application, PWAFire provides the building blocks you need to create engaging, app-like experiences on the web.</p>
+<p><strong>Ready to simplify your PWA development?</strong> Check out <a href="https://github.com/pwafire/pwafire">PWAFire on GitHub</a> and start building better web experiences today.</p>
+</section>
+        </article>
+      </main>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="floating-actions">
+      <button class="fab-trigger" aria-label="Share options">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"
+          />
+        </svg>
+      </button>
+      <div class="fab-menu">
+        <button class="fab-action copy-link" aria-label="Copy link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+            />
+          </svg>
+          <span>Copy Link</span>
+        </button>
+        <button class="fab-action share-native" aria-label="Share">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"
+            />
+          </svg>
+          <span>Share</span>
+        </button>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
