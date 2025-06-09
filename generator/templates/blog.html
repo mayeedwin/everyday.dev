@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{excerpt}} - By Maye Edwin, Software Engineer and Google Developer Expert in Web Technologies" />
-    <meta name="author" content="Maye Edwin" />
-    <meta name="keywords" content="{{title}}, Maye Edwin, Software Engineer, Google Developer Expert, Web Technologies, coding tutorial, programming" />
+    <meta name="description" content="{{excerpt}} - By {{authorName}}, {{authorJobTitle}}" />
+    <meta name="author" content="{{authorName}}" />
+    <meta name="keywords" content="{{title}}, {{seoKeywords}}, coding tutorial, programming" />
 
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{title}} - by Maye Edwin" />
-    <meta property="og:description" content="{{excerpt}} - By Software Engineer and Google Developer Expert Maye Edwin" />
-    <meta property="og:image" content="/everydaydev_twitter_banner.jpeg" />
+    <meta property="og:title" content="{{title}} - by {{authorName}}" />
+    <meta property="og:description" content="{{excerpt}} - By {{authorJobTitle}} {{authorName}}" />
+    <meta property="og:image" content="{{siteBanner}}" />
 
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="{{title}} - by Maye Edwin" />
-    <meta property="twitter:description" content="{{excerpt}} - By Software Engineer and Google Developer Expert Maye Edwin" />
-    <meta property="twitter:image" content="/everydaydev_twitter_banner.jpeg" />
+    <meta property="twitter:title" content="{{title}} - by {{authorName}}" />
+    <meta property="twitter:description" content="{{excerpt}} - By {{authorJobTitle}} {{authorName}}" />
+    <meta property="twitter:image" content="{{siteBanner}}" />
 
-    <title>{{title}} - Coding Journal by Maye Edwin</title>
-    <link rel="icon" type="image/x-icon" href="/ed_logo.ico">
+    <title>{{title}} - {{siteTitle}}</title>
+    <link rel="icon" type="image/x-icon" href="{{siteFavicon}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,23 +34,18 @@
       "description": "{{excerpt}}",
       "author": {
         "@type": "Person",
-        "name": "Maye Edwin",
-        "jobTitle": "Software Engineer and Google Developer Expert in Web Technologies",
-        "url": "https://everyday.dev",
-        "sameAs": [
-          "https://github.com/mayeedwin",
-          "https://twitter.com/mayeedwin1",
-          "https://linkedin.com/in/mayeedwin",
-          "https://www.youtube.com/@devmaye"
-        ]
+        "name": "{{authorName}}",
+        "jobTitle": "{{authorJobTitle}}",
+        "url": "{{siteUrl}}",
+        "sameAs": {{authorSocialLinksJson}}
       },
       "publisher": {
         "@type": "Person",
-        "name": "Maye Edwin",
-        "jobTitle": "Software Engineer and Google Developer Expert in Web Technologies"
+        "name": "{{authorName}}",
+        "jobTitle": "{{authorJobTitle}}"
       },
       "datePublished": "{{dateISO}}",
-      "url": "https://everyday.dev/reads/{{slug}}/"
+      "url": "{{siteUrl}}/reads/{{slug}}/"
     }
     </script>
 </head>
@@ -60,10 +55,10 @@
     <!-- Mobile Header -->
     <header class="mobile-header">
         <div class="mobile-profile">
-            <img src="/maye-edwin.jpg" alt="Maye Edwin" class="mobile-avatar" />
+            <img src="{{authorAvatar}}" alt="{{authorName}}" class="mobile-avatar" />
             <div class="mobile-profile-info">
-                <h2>Maye Edwin</h2>
-                <p>Google Developer Expert</p>
+                <h2>{{authorName}}</h2>
+                <p>{{authorJobTitle}}</p>
             </div>
         </div>
         <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
@@ -98,7 +93,7 @@
         <aside class="profile-sidebar">
             <div class="profile-content">
                 <div class="profile-avatar">
-                    <img src="/maye-edwin.jpg" alt="Maye Edwin - Software Engineer and Google Developer Expert" class="avatar-img" />
+                    <img src="{{authorAvatar}}" alt="{{authorName}} - {{authorJobTitle}}" class="avatar-img" />
                     <div class="avatar-ring"></div>
                 </div>
 
@@ -111,7 +106,7 @@
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                             </svg>
-                            <span>Google Developer Expert - Web Technologies</span>
+                            <span>{{authorRecognition}}</span>
                         </a>
                     </div>
                 </div>
@@ -127,7 +122,7 @@
                 </div>
 
                 <div class="profile-copyright">
-                    © {{currentYear}} Maye. All rights reserved.
+                    © {{currentYear}} {{authorName}}. All rights reserved.
                 </div>
             </div>
         </aside>

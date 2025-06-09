@@ -134,10 +134,11 @@ const replaceTemplateVariables = (
   data: TemplateData,
   activePage?: string
 ): string => {
-  const socialLinksJson = config.author.socialLinks
-    .map((link: SocialLink) => `"${link.href}"`)
-    .join(",\n          ");
+  const socialLinksJson = JSON.stringify(config.author.socialLinks.map((link: SocialLink) => link.href));
   const keywordsJson = JSON.stringify(config.seo.keywords);
+  const technologiesJson = JSON.stringify([
+    "JavaScript", "TypeScript", "React", "Node.js", "Web Technologies", "Software Engineering"
+  ]);
 
   let result = template
     .replace(/{{title}}/g, data.title || "")
@@ -151,18 +152,23 @@ const replaceTemplateVariables = (
     .replace(/{{currentYear}}/g, String(data.currentYear || CURRENT_YEAR))
     .replace(/{{siteName}}/g, config.site.textLogo || config.site.name)
     .replace(/{{siteTitle}}/g, config.site.title)
+    .replace(/{{siteSubtitle}}/g, config.site.subtitle || config.author.bio)
+    .replace(/{{siteDescription}}/g, config.site.description)
     .replace(/{{siteUrl}}/g, config.site.url)
     .replace(/{{siteFavicon}}/g, config.site.favicon)
     .replace(/{{siteBanner}}/g, config.site.banner)
     .replace(/{{authorName}}/g, config.author.name)
     .replace(/{{authorTitle}}/g, config.author.title)
     .replace(/{{authorJobTitle}}/g, config.author.jobTitle)
+    .replace(/{{authorRecognition}}/g, config.author.recognition || config.author.jobTitle)
     .replace(/{{authorBio}}/g, config.author.bio)
     .replace(/{{authorAvatar}}/g, config.author.avatar)
     .replace(/{{authorContactEmail}}/g, config.author.contact?.email || "")
     .replace(/{{authorContactTwitter}}/g, config.author.contact?.twitter || "")
     .replace(/{{authorSocialLinksJson}}/g, socialLinksJson)
+    .replace(/{{seoKeywords}}/g, config.seo.keywords.join(", "))
     .replace(/{{seoKeywordsJson}}/g, keywordsJson)
+    .replace(/{{seoTechnologiesJson}}/g, technologiesJson)
     .replace(
       /{{navigation}}/g,
       generateNavigationHTML(config.navigation, activePage)

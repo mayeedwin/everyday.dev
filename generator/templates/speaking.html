@@ -67,10 +67,14 @@
     <!-- Mobile Header -->
     <header class="mobile-header">
       <div class="mobile-profile">
-        <img src="{{authorAvatar}}" alt="{{authorName}}" class="mobile-avatar" />
+        <img
+          src="{{authorAvatar}}"
+          alt="{{authorName}}"
+          class="mobile-avatar"
+        />
         <div class="mobile-profile-info">
           <h2>{{authorName}}</h2>
-          <p>Google Developer Expert</p>
+          <p>{{authorJobTitle}}</p>
         </div>
       </div>
       <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
@@ -112,9 +116,6 @@
         <div class="nav-container">
           <a href="/" class="nav-logo">{{siteName}}</a>
           <ul class="nav-menu">
-            <li class="nav-item">
-              <a href="/" class="nav-link">HOME</a>
-            </li>
             {{navigationWithActive}}
           </ul>
         </div>
@@ -157,23 +158,22 @@
                     d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
                   />
                 </svg>
-                <span>Google Developer Expert - Web Technologies</span>
+                <span>{{authorRecognition}}</span>
               </a>
             </div>
           </div>
 
           <nav class="profile-nav">
             <ul class="nav-links">
-              <li><a href="/" class="nav-link">HOME</a></li>
               {{profileNavigationWithActive}}
             </ul>
           </nav>
 
-          <div class="profile-social">
-            {{socialLinks}}
-          </div>
+          <div class="profile-social">{{socialLinks}}</div>
 
-          <div class="profile-copyright">© {{currentYear}} Maye. All rights reserved.</div>
+          <div class="profile-copyright">
+            © {{currentYear}} {{authorName}}. All rights reserved.
+          </div>
         </div>
       </aside>
 

@@ -51,6 +51,7 @@ export interface SiteConfig {
     name: string;
     textLogo?: string;
     title: string;
+    subtitle?: string;
     description: string;
     url: string;
     logo: string;
@@ -61,6 +62,7 @@ export interface SiteConfig {
     name: string;
     title: string;
     jobTitle: string;
+    recognition?: string;
     bio: string;
     avatar: string;
     contact?: {

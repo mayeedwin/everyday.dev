@@ -5,7 +5,7 @@ import { Header } from "./components/layout/header";
 import { MobileNav } from "./components/layout/mobile-nav";
 
 // Initialize layout components
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   Header.init();
   new MobileNav();
 });
