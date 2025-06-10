@@ -74,6 +74,11 @@
   );
 
   --font-family: "PT Serif", Georgia, serif;
+  --font-family-blog: "Crimson Text", "Georgia", "Times New Roman", serif;
+  --font-family-blog-sans: "Inter", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+  --font-family-code: "SF Mono", "Roboto Mono", "Source Code Pro", "Menlo",
+    monospace;
 
   --font-size-xs: 0.7rem;
   --font-size-sm: 0.8rem;
@@ -414,8 +419,9 @@ pre {
   font-size: 3.2em;
   font-weight: 700;
   color: var(--color-black);
-  margin-right: 0.08em;
-  margin-top: 0.1em;
+  margin-right: 0.1em;
+  margin-top: 0;
+  line-height: 0.8;
 }
 
 .profile-nav {
@@ -547,7 +553,7 @@ pre {
   z-index: 10;
   margin: 0 auto;
   margin-bottom: var(--spacing-3xl);
-  width: 95%;
+  width: 98%;
 }
 
 .speaking-cta a {

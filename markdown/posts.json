@@ -2,7 +2,7 @@
   "posts": [
     {
       "slug": "pwafire-simplifying-pwa-development",
-      "title": "PWAFire: Simplifying PWA Development with Clean APIs",
+      "title": "Simplifying PWA Development with Clean APIs with PWAFire",
       "excerpt": "Learn how this lightweight library makes Progressive Web App development effortless.",
       "date": "2025-01-10"
     },

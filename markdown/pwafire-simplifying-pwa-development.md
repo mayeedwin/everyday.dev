@@ -23,7 +23,7 @@ await webShare({
   url: window.location.href
 });
 
-// Or just copy to clipboard
+// or just copy to clipboard
 await copyText(window.location.href);
 ```
 
@@ -33,4 +33,6 @@ Automatically handles:
 - **Cross-browser compatibility** - works on all modern browsers
 - **Error handling** - provides consistent error responses
 
-**Ready to simplify your PWA development?** Check out [docs.pwafire.org](https://docs.pwafire.org) and start building better web experiences today.
+## Ready to simplify your PWA development?
+
+Check out [docs.pwafire.org](https://docs.pwafire.org) and start building better web experiences today.
