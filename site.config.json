@@ -8,7 +8,7 @@
     "url": "https://everyday.dev",
     "logo": "/images/ed_logo.svg",
     "favicon": "/images/ed_logo.ico",
-    "banner": "/images/everydaydev_twitter_banner.jpeg"
+    "banner": "https://maye.pwafire.org/images/everydaydev_twitter_banner.jpeg"
   },
   "author": {
     "name": "Maye Edwin",
