@@ -10,7 +10,7 @@
     <meta name="author" content="Maye Edwin" />
     <meta
       name="keywords"
-      content="Writing Service Workers with Workbox - Caching, Maye Edwin, @maye, Software Engineer, Google Developer Expert, Web Technologies, JavaScript, TypeScript, React, Node.js, coding journal, developer blog, programming tutorials, dev life, daily discoveries, coding tutorial, programming"
+      content="Writing Service Workers with Workbox - Caching, Maye Edwin, @maye, Software Engineer, Google Developer Expert, Web Technologies, JavaScript, TypeScript, React, Node.js, coding blog, developer blog, programming tutorials, dev life, daily discoveries, coding tutorial, programming"
     />
 
     <meta property="og:type" content="article" />
@@ -36,7 +36,7 @@
       content="Writing Service Workers with Workbox - Caching - Article by Maye Edwin"
     />
 
-    <title>Writing Service Workers with Workbox - Caching - A coding journal by Maye Edwin</title>
+    <title>Writing Service Workers with Workbox - Caching - A coding blog by Maye Edwin</title>
     <link rel="canonical" href="https://maye.pwafire.org//reads/writing-service-workers-with-workbox/" />
     <link rel="icon" type="image/x-icon" href="/images/ed_logo.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -84,6 +84,7 @@
         <img
           src="/images/maye-edwin.jpg"
           alt="Maye Edwin"
+          title="Maye Edwin - Google Developer Expert"
           class="mobile-avatar"
         />
         <div class="mobile-profile-info">
@@ -128,7 +129,7 @@
     <header class="header">
       <nav class="nav">
         <div class="nav-container">
-          <a href="/" class="nav-logo">everyday.dev</a>
+          <a href="/" class="nav-logo" title="everyday.dev - Home">everyday.dev</a>
           <ul class="nav-menu">
             <li class="nav-item">
         <a href="/" class="nav-link">
@@ -169,6 +170,7 @@
             <img
               src="/images/maye-edwin.jpg"
               alt="Maye Edwin - Software Engineer and Google Developer Expert in Web Technologies"
+              title="Maye Edwin - Software Engineer and Google Developer Expert in Web Technologies"
               class="avatar-img"
             />
             <div class="avatar-ring"></div>
@@ -177,11 +179,12 @@
           <div class="profile-info">
             <h1 class="profile-name">Maye Edwin</h1>
             <p class="profile-title">Software Engineer</p>
-            <p class="profile-bio">EverydayDev is my dev journal, learn about my daily coding adventures and general dos, donts and in-betweens!</p>
+            <p class="profile-bio">EverydayDev is my dev blog, learn about my daily coding adventures and general dos, donts and in-betweens!</p>
             <div class="profile-recognition">
               <a
                 href="{{authorRecognitionLink}}"
                 class="gde-badge"
+                title="View Google Developer Expert - Web Technologies profile on Google Developers"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -248,7 +251,7 @@
       <main class="content-area" id="main-content">
         <nav class="sticky-nav">
           <div class="sticky-nav-content">
-            <a href="/" class="back-link">
+            <a href="/" class="back-link" title="Back to homepage">
               <svg
                 width="20"
                 height="20"
@@ -272,7 +275,7 @@
           <header class="post-header">
             <div class="post-meta">
               <time class="post-date">June 16, 2025</time>
-              <span class="post-reading-time">2 min read</span>
+              <span class="post-reading-time">3 min read</span>
             </div>
             <h1 class="post-title">Writing Service Workers with Workbox - Caching</h1>
             <p class="post-excerpt">Workbox provides tooling and libraries for writing production ready service workers.</p>
@@ -280,28 +283,27 @@
           <section class="post-body"><h1>Why workbox though?</h1>
 <p><strong>Service workers</strong> provide the door to writing offline-first capabilities as the base feature. Bottom line, they sit as a proxy between web browsers and web servers. Workbox libraries and tools allows you to build robust service workers quicker than ever!</p>
 <h2>What you need to know about caching</h2>
-<p>When thinking about offline-first, they are key questions you need to answer first.</p>
+<p>When thinking about caching, there are key questions you need to answer first.</p>
 <ul>
-<li><strong><em>What</em></strong> to cache?</li>
-<li><strong><em>When</em></strong> to cache?</li>
-<li>How <strong><em>much</em></strong> to cache?</li>
-<li>How <strong><em>frequent</em></strong> to cache?</li>
-<li>And the most important ONE, how <strong><em>fresh</em></strong> do you need the resources to be?</li>
+<li><strong>What</strong> to cache?</li>
+<li><strong>When</strong> to cache?</li>
+<li>How <strong>much</strong> to cache?</li>
+<li>How <strong>frequent</strong> to cache?</li>
+<li>And the most important ONE, how <strong>fresh</strong> do you need the resources to be?</li>
 </ul>
-<p>Workbox provides different to ways to handle resources with the cache; <strong>caching strategies</strong>. Answering the above questions would really help you to decide what strategy works best for your awesome web application</p>
+<p>Workbox provides different ways to handle resources with the cache; <strong>caching strategies</strong>. Answering the above questions would really help you to decide what strategy works best for your awesome web application</p>
 <h3>1. Cache only</h3>
-<p>This is when you basically have <strong><em>precached resources</em></strong> and an array of these precached items. Simply this means, when a request is made, if the resource is in the list, we would always have it from the cache, the rest of the resources are always network fetched!</p>
+<p>This is when you basically have <strong>precached resources</strong> and an array of these precached items. Simply this means, when a request is made, if the resource is in the list, we would always have it from the cache, the rest of the resources are always network fetched! Best for resources whose freshness does not really matter.</p>
 <h3>2. Network only</h3>
-<p>This is when you always want <strong><em>fresh resources</em></strong>! Basically the opposite of cache-only! The cache is bypassed!</p>
+<p>This is when you always want <strong>fresh resources</strong>! Basically the opposite of cache-only! The cache is bypassed! We would say, for e.g a live feed of some sort? Maybe a news feed?</p>
 <h3>3. Cache first</h3>
-<p>This works best when you want to check if a resource is in the <strong><em>cache</em></strong> before attemping to got to the network. If <strong><em>network-fetched</em></strong>, once finished, add it to the cache!</p>
+<p>This works best when you want to check if a resource is in the <strong>cache</strong> before attempting to go to the network. If <strong>network-fetched</strong>, once finished, add it to the cache! An example would be a news article page.</p>
 <h3>4. Network first</h3>
-<p>Basically the opposite of the <strong><em>cache-first</em></strong>. You got to the network for the resource, then add it to the cache, if offline later on, we fall back to the cache.</p>
+<p>Basically the opposite of the <strong>cache-first</strong>. You go to the network for the resource, then add it to the cache, if offline later on, we fall back to the cache. Probably a social app, like X would be an example.</p>
 <h3>5. Stale-while-revalidate</h3>
-<p>Ideally, this is a <strong><em>hybrid</em></strong> of <strong><em>cache-first</em></strong> and <strong><em>network-first</em></strong>. On the first request of a resource, we got “<strong><em>network-first</em></strong>” but there is a twist, where then it becomes <strong><em>cache-first</em></strong> on subsequent requests of the resource while updating the cached resource in the background with freshest version.</p>
-<p>It prioritizes <strong><em>speed of access for a resource</em></strong>, while also keeping it <strong><em>up to date in the background</em></strong>. Best for resources that are somewhat important to keep upto-date but not crucial.</p>
-<h3>Get staaaaaaaarted</h3>
-<p>Now that you have a quick understanding; if not - re-read; LOL! - anyways, get started with <a href="https://developer.chrome.com/docs/workbox">workbox here</a></p>
+<p>Ideally, this is a <strong>hybrid</strong> of <strong>cache-first</strong> and <strong>network-first</strong>. On the first request of a resource, we go “<strong>network-first</strong>” but there is a twist, where then it becomes <strong>cache-first</strong> on subsequent requests of the resource while updating the cached resource in the background with the freshest version.</p>
+<p>It prioritizes <strong>speed of access for a resource</strong>, while also keeping it <strong>up to date in the background</strong>. Best for resources that are somewhat important to keep up-to-date but not crucial.</p>
+<p>To get started with <a href="https://developer.chrome.com/docs/workbox">workbox</a> and how to use it, check out the <a href="https://developer.chrome.com/docs/workbox">official documentation here</a>.</p>
 </section>
         </article>
       </main>
@@ -309,7 +311,7 @@
 
     <!-- Floating Action Button -->
     <div class="floating-actions">
-      <button class="fab-trigger" aria-label="Share options">
+      <button class="fab-trigger" aria-label="Share options" title="Share this article">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
           <path
             d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"
@@ -317,7 +319,7 @@
         </svg>
       </button>
       <div class="fab-menu">
-        <button class="fab-action copy-link" aria-label="Copy link">
+        <button class="fab-action copy-link" aria-label="Copy link" title="Copy article link to clipboard">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
             <path
               d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
@@ -325,7 +327,7 @@
           </svg>
           <span>Copy Link</span>
         </button>
-        <button class="fab-action share-native" aria-label="Share">
+        <button class="fab-action share-native" aria-label="Share" title="Share article using device share menu">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
             <path
               d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"

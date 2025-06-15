@@ -54,6 +54,7 @@
         <img
           src="{{authorAvatar}}"
           alt="{{authorName}}"
+          title="{{authorName}} - {{authorRecognitionTitle}}"
           class="mobile-avatar"
         />
         <div class="mobile-profile-info">
@@ -98,7 +99,7 @@
     <header class="header">
       <nav class="nav">
         <div class="nav-container">
-          <a href="/" class="nav-logo">{{siteName}}</a>
+          <a href="/" class="nav-logo" title="{{siteName}} - Home">{{siteName}}</a>
           <ul class="nav-menu">
             {{navigation}}
           </ul>
@@ -116,6 +117,7 @@
             <img
               src="{{authorAvatar}}"
               alt="{{authorName}} - {{authorJobTitle}}"
+              title="{{authorName}} - {{authorJobTitle}}"
               class="avatar-img"
             />
             <div class="avatar-ring"></div>
@@ -129,6 +131,7 @@
               <a
                 href="{{authorRecognitionLink}}"
                 class="gde-badge"
+                title="View {{authorRecognition}} profile on Google Developers"
                 target="_blank"
                 rel="noopener noreferrer"
               >

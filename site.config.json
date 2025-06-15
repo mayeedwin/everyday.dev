@@ -2,8 +2,8 @@
   "site": {
     "name": "EverydayDev",
     "textLogo": "everyday.dev",
-    "title": "A coding journal by Maye Edwin",
-    "subtitle": "Daily discoveries, welcome to my coding journal!",
+    "title": "A coding blog by Maye Edwin",
+    "subtitle": "Daily discoveries, welcome to my coding blog!",
     "description": "Just Maye, documenting the dev life one post at a time - Software Engineer and Google Developer Expert in Web Technologies",
     "url": "https://maye.pwafire.org/",
     "logo": "/images/ed_logo.svg",
@@ -18,7 +18,7 @@
     "recognition": "Google Developer Expert - Web Technologies",
     "recognitionTitle": "Google Developer Expert",
     "recognitionLink": "https://developers.google.com/community/experts/directory",
-    "bio": "EverydayDev is my dev journal, learn about my daily coding adventures and general dos, donts and in-betweens!",
+    "bio": "EverydayDev is my dev blog, learn about my daily coding adventures and general dos, donts and in-betweens!",
     "avatar": "/images/maye-edwin.jpg",
     "contact": {
       "email": "devmaye@gmail.com",
@@ -82,7 +82,7 @@
       "TypeScript",
       "React",
       "Node.js",
-      "coding journal",
+      "coding blog",
       "developer blog",
       "programming tutorials",
       "dev life",
