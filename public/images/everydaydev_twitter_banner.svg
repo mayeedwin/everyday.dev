@@ -1,23 +1,23 @@
 <svg width="1200" height="675" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
   <rect width="1200" height="675" fill="#000000"/>
-  
+
   <!-- Logo circle on left -->
   <circle cx="180" cy="337" r="70" fill="#000000" stroke="#333333" stroke-width="1"/>
   <text x="180" y="357" text-anchor="middle" fill="#ffffff" font-family="Georgia, serif" font-size="48" font-weight="400">ed</text>
   <line x1="145" y1="375" x2="215" y2="375" stroke="#ffffff" stroke-width="2.5"/>
-  
+
   <!-- Main text -->
-  <text x="300" y="320" fill="#ffffff" font-family="Georgia, serif" font-size="52" font-weight="400">everyday.dev</text>
-  
+  <text x="300" y="320" fill="#ffffff" font-family="Georgia, serif" font-size="52" font-weight="400">@maye</text>
+
   <!-- Tagline -->
   <text x="300" y="370" fill="#cccccc" font-family="Georgia, serif" font-size="28" font-weight="300">Just Maye, documenting the dev life one post at a time</text>
-  
+
   <!-- Code-inspired decorative elements -->
   <text x="1000" y="150" fill="#222222" font-family="Monaco, monospace" font-size="14">&lt;/code&gt;</text>
   <text x="950" y="200" fill="#222222" font-family="Monaco, monospace" font-size="12">function() {</text>
   <text x="1050" y="250" fill="#222222" font-family="Monaco, monospace" font-size="14">}</text>
-  
+
   <text x="950" y="500" fill="#222222" font-family="Monaco, monospace" font-size="12">console.log("dev")</text>
   <text x="1100" y="550" fill="#222222" font-family="Monaco, monospace" font-size="14">//</text>
 </svg>

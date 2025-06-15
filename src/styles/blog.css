@@ -245,12 +245,14 @@
 .post-body strong {
   color: var(--color-black);
   font-weight: 600;
+  font-size: 0.95rem;
 }
 
 .post-body a {
   color: var(--color-black);
   text-decoration: underline;
   transition: color 0.3s ease;
+  font-size: 0.95rem;
 }
 
 .post-body a:hover {

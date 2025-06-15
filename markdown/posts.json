@@ -1,6 +1,12 @@
 {
   "posts": [
     {
+      "slug": "writing-service-workers-with-workbox",
+      "title": "Writing Service Workers with Workbox - Caching",
+      "excerpt": "Workbox provides tooling and libraries for writing production ready service workers.",
+      "date": "2025-06-16"
+    },
+    {
       "slug": "pwafire-simplifying-pwa-development",
       "title": "Simplifying PWA Development with Clean APIs with PWAFire",
       "excerpt": "Learn how this lightweight library makes Progressive Web App development effortless.",
@@ -9,7 +15,7 @@
     {
       "slug": "squash-pushed-commits-into-one-single-commit",
       "title": "Squash Pushed Commits into One Single Commit",
-      "excerpt": "Quickly squash your pushed commits into one single commit with simple git commands",
+      "excerpt": "Quickly squash your pushed commits into one single commit with simple git commands.",
       "date": "2025-06-10"
     },
     {
