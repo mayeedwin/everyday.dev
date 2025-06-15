@@ -9,7 +9,7 @@ When thinking about caching, there are key questions you need to answer first.
 - **What** to cache?
 - **When** to cache?
 - How **much** to cache?
-- How **frequent** to cache?
+- How **long** to cache?
 - And the most important ONE, how **fresh** do you need the resources to be?
 
 Workbox provides different ways to handle resources with the cache; **caching strategies**. Answering the above questions would really help you to decide what strategy works best for your awesome web application
