@@ -1,16 +1,16 @@
 export class Header {
-  private static readonly ACTIVE_CLASS = "active";
+  static ACTIVE_CLASS = "active";
 
   static setActiveNavLink(pathname: string) {
     document.querySelectorAll(".nav-link").forEach((link) => {
-      link.classList.remove(Header.ACTIVE_CLASS);
+      link.classList.remove(this.ACTIVE_CLASS);
     });
 
     const matchingLinks = document.querySelectorAll(
       `a[href="${pathname}"], a[href="${pathname}/"]`
     );
     matchingLinks.forEach((link) => {
-      link.classList.add(Header.ACTIVE_CLASS);
+      link.classList.add(this.ACTIVE_CLASS);
     });
   }
 

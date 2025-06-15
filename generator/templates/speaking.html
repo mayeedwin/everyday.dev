@@ -23,19 +23,27 @@
       content="Conference talks, workshops, and presentations on web development, JavaScript, TypeScript, and building developer communities."
     />
     <meta property="og:image" content="{{siteBanner}}" />
+    <meta property="og:url" content="{{siteUrl}}/speaking/" />
 
-    <meta property="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@mayeedwin1" />
+    <meta name="twitter:creator" content="@mayeedwin1" />
     <meta
-      property="twitter:title"
+      name="twitter:title"
       content="Speaking - {{authorName}} | Google Developer Expert"
     />
     <meta
-      property="twitter:description"
+      name="twitter:description"
       content="Conference talks, workshops, and presentations on web development, JavaScript, TypeScript, and building developer communities."
     />
-    <meta property="twitter:image" content="{{siteBanner}}" />
+    <meta name="twitter:image" content="{{siteBanner}}" />
+    <meta
+      name="twitter:image:alt"
+      content="Speaking Engagements - {{authorName}} / {{authorDisplayTitle}}"
+    />
 
     <title>Speaking - {{siteTitle}}</title>
+    <link rel="canonical" href="{{siteUrl}}/speaking/" />
     <link rel="icon" type="image/x-icon" href="{{siteFavicon}}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -74,7 +82,7 @@
         />
         <div class="mobile-profile-info">
           <h2>{{authorName}}</h2>
-          <p>{{authorJobTitle}}</p>
+          <p>{{authorRecognitionTitle}}</p>
         </div>
       </div>
       <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
@@ -143,7 +151,7 @@
             <p class="profile-bio">{{authorBio}}</p>
             <div class="profile-recognition">
               <a
-                href="https://developers.google.com/community/experts/directory"
+                href="{{authorRecognitionLink}}"
                 class="gde-badge"
                 target="_blank"
                 rel="noopener noreferrer"

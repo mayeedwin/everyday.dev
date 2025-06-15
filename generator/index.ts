@@ -76,11 +76,11 @@ const generateNavigationHTML = (
     .map((item) => {
       const isActive =
         activePage && item.href.includes(activePage) ? " active" : "";
-      const iconSvg = item.icon 
+      const iconSvg = item.icon
         ? `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
              <path d="${item.icon}"/>
-           </svg>` 
-        : '';
+           </svg>`
+        : "";
       return `<li class="nav-item">
         <a href="${item.href}" class="nav-link${isActive}"${
         item.external ? ' target="_blank" rel="noopener noreferrer"' : ""
@@ -101,11 +101,11 @@ const generateProfileNavigationHTML = (
     .map((item) => {
       const isActive =
         activePage && item.href.includes(activePage) ? " active" : "";
-      const iconSvg = item.icon 
+      const iconSvg = item.icon
         ? `<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
              <path d="${item.icon}"/>
-           </svg>` 
-        : '';
+           </svg>`
+        : "";
       return `<li><a href="${item.href}" class="nav-link${isActive}"${
         item.external ? ' target="_blank" rel="noopener noreferrer"' : ""
       }>
@@ -134,10 +134,17 @@ const replaceTemplateVariables = (
   data: TemplateData,
   activePage?: string
 ): string => {
-  const socialLinksJson = JSON.stringify(config.author.socialLinks.map((link: SocialLink) => link.href));
+  const socialLinksJson = JSON.stringify(
+    config.author.socialLinks.map((link: SocialLink) => link.href)
+  );
   const keywordsJson = JSON.stringify(config.seo.keywords);
   const technologiesJson = JSON.stringify([
-    "JavaScript", "TypeScript", "React", "Node.js", "Web Technologies", "Software Engineering"
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Node.js",
+    "Web Technologies",
+    "Software Engineering"
   ]);
 
   let result = template
@@ -160,7 +167,14 @@ const replaceTemplateVariables = (
     .replace(/{{authorName}}/g, config.author.name)
     .replace(/{{authorTitle}}/g, config.author.title)
     .replace(/{{authorJobTitle}}/g, config.author.jobTitle)
-    .replace(/{{authorRecognition}}/g, config.author.recognition || config.author.jobTitle)
+    .replace(
+      /{{authorRecognition}}/g,
+      config.author.recognition || config.author.jobTitle
+    )
+    .replace(
+      /{{authorRecognitionTitle}}/g,
+      config.author.recognitionTitle || config.author.jobTitle
+    )
     .replace(/{{authorBio}}/g, config.author.bio)
     .replace(/{{authorAvatar}}/g, config.author.avatar)
     .replace(/{{authorContactEmail}}/g, config.author.contact?.email || "")

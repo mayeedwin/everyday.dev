@@ -63,6 +63,8 @@ export interface SiteConfig {
     title: string;
     jobTitle: string;
     recognition?: string;
+    recognitionTitle?: string;
+    recognitionLink?: string;
     bio: string;
     avatar: string;
     contact?: {

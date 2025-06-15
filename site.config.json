@@ -13,8 +13,11 @@
   "author": {
     "name": "Maye Edwin",
     "title": "Software Engineer",
+    "displayTitle": "Software Engineer & Google Developer Expert",
     "jobTitle": "Software Engineer and Google Developer Expert in Web Technologies",
     "recognition": "Google Developer Expert - Web Technologies",
+    "recognitionTitle": "Google Developer Expert",
+    "recognitionLink": "https://developers.google.com/community/experts/directory",
     "bio": "Everyday is my coding journal, where I'm sharing the real dev life - bugs, breakthroughs, and everything in between.",
     "avatar": "/images/maye-edwin.jpg",
     "contact": {

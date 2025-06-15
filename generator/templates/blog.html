@@ -20,16 +20,24 @@
       content="{{excerpt}} - By {{authorJobTitle}} {{authorName}}"
     />
     <meta property="og:image" content="{{siteBanner}}" />
+    <meta property="og:url" content="{{siteUrl}}/reads/{{slug}}/" />
 
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="{{title}} - by {{authorName}}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@mayeedwin1" />
+    <meta name="twitter:creator" content="@mayeedwin1" />
+    <meta name="twitter:title" content="{{title}} - by {{authorName}}" />
     <meta
-      property="twitter:description"
+      name="twitter:description"
       content="{{excerpt}} - By {{authorJobTitle}} {{authorName}}"
     />
-    <meta property="twitter:image" content="{{siteBanner}}" />
+    <meta name="twitter:image" content="{{siteBanner}}" />
+    <meta
+      name="twitter:image:alt"
+      content="{{title}} - Article by {{authorName}}"
+    />
 
     <title>{{title}} - {{siteTitle}}</title>
+    <link rel="canonical" href="{{siteUrl}}/reads/{{slug}}/" />
     <link rel="icon" type="image/x-icon" href="{{siteFavicon}}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -80,7 +88,7 @@
         />
         <div class="mobile-profile-info">
           <h2>{{authorName}}</h2>
-          <p>{{authorRecognition}}</p>
+          <p>{{authorRecognitionTitle}}</p>
         </div>
       </div>
       <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
@@ -149,7 +157,7 @@
             <p class="profile-bio">{{authorBio}}</p>
             <div class="profile-recognition">
               <a
-                href="https://developers.google.com/community/experts/directory"
+                href="{{authorRecognitionLink}}"
                 class="gde-badge"
                 target="_blank"
                 rel="noopener noreferrer"
