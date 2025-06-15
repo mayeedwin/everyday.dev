@@ -136,7 +136,7 @@ class SpeakingManager {
     );
   }
 
-  private renderSpeakingList(container: HTMLElement): void {
+  private renderSpeakingList(container: HTMLElement) {
     const sortedData = DateFormatter.sortByDate(this.speakingData, "date");
 
     if (sortedData.length === 0) {
@@ -151,7 +151,7 @@ class SpeakingManager {
     container.innerHTML = cardsHtml;
   }
 
-  private showNoResults(container: HTMLElement): void {
+  private showNoResults(container: HTMLElement) {
     container.innerHTML = `
       <div class="no-results">
         <p>${SpeakingManager.NO_RESULTS_MESSAGE}</p>
@@ -159,7 +159,7 @@ class SpeakingManager {
     `;
   }
 
-  private showError(container: HTMLElement): void {
+  private showError(container: HTMLElement) {
     ErrorHandler.showError(container, SpeakingManager.ERROR_MESSAGE, () =>
       window.location.reload()
     );

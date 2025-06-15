@@ -1,5 +1,5 @@
-export * from './speaking';
-export * from './blog';
+export * from "./speaking";
+export * from "./blog";
 
 export interface RouteData {
   title: string;

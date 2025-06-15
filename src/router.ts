@@ -10,13 +10,10 @@ class Router {
   }
 
   private _init() {
-    // Handle browser back/forward
     window.addEventListener("popstate", this._handlePopState.bind(this));
 
-    // Intercept link clicks
     document.addEventListener("click", this._handleClick.bind(this));
 
-    // Handle initial page load
     this._currentPath = window.location.pathname;
   }
 
@@ -65,7 +62,6 @@ class Router {
       this._currentPath = path;
     } catch (error) {
       console.error("Navigation error:", error);
-      // Fallback to traditional navigation
       window.location.href = path;
     } finally {
       this._isLoading = false;
@@ -99,16 +95,13 @@ class Router {
   }
 
   private _updatePage(routeData: RouteData, pushState: boolean) {
-    // Update content area
     const contentArea = document.querySelector(".content-area");
     if (contentArea) {
       contentArea.innerHTML = routeData.content;
     }
 
-    // Update document title
     document.title = routeData.title;
 
-    // Update URL
     if (pushState) {
       history.pushState(
         { path: routeData.url },
@@ -117,21 +110,17 @@ class Router {
       );
     }
 
-    // Scroll to top
     window.scrollTo(0, 0);
 
-    // Re-initialize any JavaScript for the new content
     this._initializePageScripts();
   }
 
   private _initializePageScripts() {
-    // Reinitialize UI components for the new content
     import('./utils/ui.js').then(({ uiManager }) => {
       if (uiManager) {
         uiManager.reinit();
       }
     }).catch(() => {
-      // Fallback to basic copy button functionality if module fails to load
       this._fallbackCopyButtons();
     });
   }
@@ -172,7 +161,6 @@ class Router {
       contentArea.style.cursor = "wait";
     }
 
-    // Add loading class for additional styling if needed
     document.body.classList.add("router-loading");
   }
 
@@ -187,7 +175,6 @@ class Router {
     document.body.classList.remove("router-loading");
   }
 
-  // Preload page on hover
   preloadPage(path: string) {
     if (!this._cache.has(path) && !this._isLoading) {
       this._fetchPage(path)
@@ -195,16 +182,13 @@ class Router {
           this._cache.set(path, routeData);
         })
         .catch(() => {
-          // Silently fail preloading
-        });
+          });
     }
   }
 }
 
-// Export router instance
 export const router = new Router();
 
-// Add preloading on hover
 document.addEventListener(
   "mouseenter",
   (e) => {

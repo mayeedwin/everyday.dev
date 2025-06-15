@@ -1,20 +1,6 @@
+import type { BlogData, BlogPost } from "@/types";
 import MarkdownIt from "markdown-it";
 import Prism from "prismjs";
-
-export interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  tags: string[];
-  readingTime: string;
-  slug: string;
-  content?: string;
-}
-
-export interface BlogPostMeta {
-  posts: BlogPost[];
-}
 
 const md: MarkdownIt = new MarkdownIt({
   html: true,
@@ -38,14 +24,14 @@ const md: MarkdownIt = new MarkdownIt({
 
 export const renderMarkdown = (content: string): string => {
   return md.render(content);
-}
+};
 
 export const calculateReadingTime = (content: string): string => {
   const wordsPerMinute = 200;
   const words = content.trim().split(/\s+/).length;
   const minutes = Math.ceil(words / wordsPerMinute);
   return `${minutes} min read`;
-}
+};
 
 export const formatDate = (dateString: string): string => {
   const date = new Date(dateString);
@@ -54,7 +40,7 @@ export const formatDate = (dateString: string): string => {
     month: "long",
     day: "numeric"
   });
-}
+};
 
 export const createSlug = (title: string): string => {
   return title
@@ -63,7 +49,7 @@ export const createSlug = (title: string): string => {
     .replace(/\s+/g, "-")
     .replace(/-+/g, "-")
     .trim();
-}
+};
 
 export const loadBlogPosts = async (): Promise<BlogPost[]> => {
   try {
@@ -71,13 +57,13 @@ export const loadBlogPosts = async (): Promise<BlogPost[]> => {
     if (!response.ok) {
       throw new Error(`Failed to load posts: ${response.statusText}`);
     }
-    const data: BlogPostMeta = await response.json();
+    const data: BlogData = await response.json();
     return data.posts;
   } catch (error) {
     console.error("Error loading blog posts:", error);
     throw error;
   }
-}
+};
 
 export const loadBlogPost = async (slug: string): Promise<BlogPost> => {
   try {
@@ -103,7 +89,7 @@ export const loadBlogPost = async (slug: string): Promise<BlogPost> => {
     console.error("Error loading blog post:", error);
     throw error;
   }
-}
+};
 
 export const getRelatedPosts = (
   currentPost: BlogPost,
@@ -114,7 +100,7 @@ export const getRelatedPosts = (
     .filter((post) => post.id !== currentPost.id)
     .filter((post) => post.tags.some((tag) => currentPost.tags.includes(tag)))
     .slice(0, limit);
-}
+};
 
 export const debounce = <T extends (...args: any[]) => any>(
   func: T,
@@ -125,4 +111,4 @@ export const debounce = <T extends (...args: any[]) => any>(
     clearTimeout(timeout);
     timeout = setTimeout(() => func.apply(this, args), wait);
   };
-}
+};

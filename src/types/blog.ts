@@ -1,15 +1,14 @@
+export interface BlogData {
+  posts: BlogPost[];
+}
+
 export interface BlogPost {
   id: string;
   title: string;
-  slug: string;
-  date: string;
   excerpt: string;
-  content: string;
+  date: string;
   tags: string[];
-  readingTime: number;
-  published: boolean;
-}
-
-export interface BlogData {
-  posts: BlogPost[];
+  readingTime: string;
+  slug: string;
+  content?: string;
 }

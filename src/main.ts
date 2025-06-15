@@ -7,14 +7,11 @@ import { copyText } from "pwafire/clipboard";
 import { webShare } from "pwafire/web-share";
 import { webShare as checkWebShare } from "pwafire/check";
 
-// Initialize layout components
 document.addEventListener("DOMContentLoaded", () => {
   Header.init();
   new MobileNav();
   initFloatingActions();
 });
-
-// Floating Action Button functionality
 function initFloatingActions() {
   const fabContainer = document.querySelector(".floating-actions");
   const fabTrigger = document.querySelector(".fab-trigger");
