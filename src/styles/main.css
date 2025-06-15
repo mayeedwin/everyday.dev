@@ -80,15 +80,15 @@
   --font-family-code: "SF Mono", "Roboto Mono", "Source Code Pro", "Menlo",
     monospace;
 
-  --font-size-xs: 0.7rem;
-  --font-size-sm: 0.8rem;
-  --font-size-base: 0.9rem;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.85rem;
+  --font-size-base: 0.95rem;
   --font-size-lg: 1rem;
-  --font-size-xl: 1.15rem;
-  --font-size-2xl: 1.35rem;
-  --font-size-3xl: 1.6rem;
-  --font-size-4xl: 1.8rem;
-  --font-size-5xl: 2.2rem;
+  --font-size-xl: 1.1rem;
+  --font-size-2xl: 1.2rem;
+  --font-size-3xl: 1.3rem;
+  --font-size-4xl: 1.4rem;
+  --font-size-5xl: 1.5rem;
 
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
@@ -180,17 +180,17 @@ h1 {
 
 h2 {
   font-size: var(--font-size-xl);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 h3 {
   font-size: var(--font-size-lg);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 h4 {
   font-size: var(--font-size-base);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 h5 {

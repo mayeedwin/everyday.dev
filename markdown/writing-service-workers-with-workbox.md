@@ -1,24 +1,22 @@
 # Why workbox though?
 
-Workbox provides tools and libraries that provide developers with endless capabilities they can build while writing service workers out of the box! In this short write-up, I will focus on **caching**.
-
-**Service workers** provide the door to writing offline-first capabilities as the base feature. Bottom line, they sit as a proxy between web browsers and web servers.
+**Service workers** provide the door to writing offline-first capabilities as the base feature. Bottom line, they sit as a proxy between web browsers and web servers. Workbox libraries and tools allows you to build robust service workers quicker than ever!
 
 ## What you need to know about caching
 
 When thinking about offline-first, they are key questions you need to answer first.
 
-- What to cache?
-- When to cache?
-- How much to cache?
-- How frequent to cache?
-- And the most important ONE, how fresh do you need the resources to be?
+- **_What_** to cache?
+- **_When_** to cache?
+- How **_much_** to cache?
+- How **_frequent_** to cache?
+- And the most important ONE, how **_fresh_** do you need the resources to be?
 
-Workbox provides different to cache; **caching strategies**. Answering the above questions would really help you to decide what strategy works best for your awesome web application
+Workbox provides different to ways to handle resources with the cache; **caching strategies**. Answering the above questions would really help you to decide what strategy works best for your awesome web application
 
 ### 1. Cache only
 
-This is when you basically have **_precached resources_** and an array of these precached items. Simply this means, when a request is made, if the resource is the list, we would always have it from the cache, the rest of the resources are always network fetched!
+This is when you basically have **_precached resources_** and an array of these precached items. Simply this means, when a request is made, if the resource is in the list, we would always have it from the cache, the rest of the resources are always network fetched!
 
 ### 2. Network only
 
@@ -40,4 +38,4 @@ It prioritizes **_speed of access for a resource_**, while also keeping it **_up
 
 ### Get staaaaaaaarted
 
-Now that you have a quick understanding; if not - re-read; LOL! - get started with [workbox here](https://developer.chrome.com/docs/workbox)
+Now that you have a quick understanding; if not - re-read; LOL! - anyways, get started with [workbox here](https://developer.chrome.com/docs/workbox)

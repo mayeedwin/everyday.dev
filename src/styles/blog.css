@@ -235,9 +235,8 @@
   flex-direction: column;
   gap: 10px;
   padding: 1rem 0;
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
   color: var(--color-gray-700);
-  font-family: var(--font-family-blog);
   line-height: 1.58;
   letter-spacing: -0.003em;
 }
@@ -245,14 +244,14 @@
 .post-body strong {
   color: var(--color-black);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
 }
 
 .post-body a {
   color: var(--color-black);
   text-decoration: underline;
   transition: color 0.3s ease;
-  font-size: 0.95rem;
+  font-size: var(--font-size-base);
 }
 
 .post-body a:hover {
@@ -260,15 +259,13 @@
 }
 
 .post-body p {
-  font-family: var(--font-family-blog);
   line-height: 1.58;
   letter-spacing: -0.003em;
   color: var(--color-gray-700);
-  font-size: 1.1rem;
+  font-size: var(--font-size-base);
 }
 
 .post-body h2 {
-  font-family: var(--font-family-blog);
   font-weight: 600;
   color: var(--color-primary);
 }
@@ -277,8 +274,8 @@
 .post-body ol {
   padding-left: var(--spacing-2xl);
   color: var(--color-gray-700);
-  font-size: 0.95rem;
-  font-family: var(--font-family-blog);
+  font-size: var(--font-size-base);
+
   line-height: 1.58;
 }
 
@@ -290,7 +287,7 @@
   background: var(--color-surface);
   padding: var(--spacing-xl) var(--spacing-2xl);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  font-family: var(--font-family-blog);
+
   line-height: 1.58;
 }
 
