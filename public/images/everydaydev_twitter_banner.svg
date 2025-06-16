@@ -8,16 +8,17 @@
   <line x1="145" y1="375" x2="215" y2="375" stroke="#ffffff" stroke-width="2.5"/>
 
   <!-- Main text -->
-  <text x="300" y="320" fill="#ffffff" font-family="Georgia, serif" font-size="52" font-weight="400">@maye</text>
+  <text x="300" y="320" fill="#ffffff" font-family="Georgia, serif" font-size="52" font-weight="400">Maye Edwin</text>
 
-  <!-- Tagline -->
-  <text x="300" y="370" fill="#cccccc" font-family="Georgia, serif" font-size="28" font-weight="300">Just Maye, documenting the dev life one post at a time</text>
-
+  <!-- Personal tagline -->
+  <text x="300" y="370" fill="#cccccc" font-family="Georgia, serif" font-size="28" font-weight="300">Daily coding adventures and general dos, don'ts</text>
+  <text x="300" y="405" fill="#cccccc" font-family="Georgia, serif" font-size="28" font-weight="300">and in-betweens!</text>
+  
   <!-- Code-inspired decorative elements -->
   <text x="1000" y="150" fill="#222222" font-family="Monaco, monospace" font-size="14">&lt;/code&gt;</text>
   <text x="950" y="200" fill="#222222" font-family="Monaco, monospace" font-size="12">function() {</text>
   <text x="1050" y="250" fill="#222222" font-family="Monaco, monospace" font-size="14">}</text>
-
-  <text x="950" y="500" fill="#222222" font-family="Monaco, monospace" font-size="12">console.log("dev")</text>
+  
+  <text x="950" y="500" fill="#222222" font-family="Monaco, monospace" font-size="12">console.log("life")</text>
   <text x="1100" y="550" fill="#222222" font-family="Monaco, monospace" font-size="14">//</text>
 </svg>
