@@ -279,18 +279,6 @@
   line-height: 1.58;
 }
 
-.post-body blockquote {
-  border-left: 3px solid var(--color-lighter);
-  font-style: italic;
-  color: var(--color-muted);
-  font-size: var(--font-size-base);
-  background: var(--color-surface);
-  padding: var(--spacing-xl) var(--spacing-2xl);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-
-  line-height: 1.58;
-}
-
 .code-block-container {
   position: relative;
   padding: var(--spacing-3xl) 0;

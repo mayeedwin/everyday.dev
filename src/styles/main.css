@@ -149,6 +149,15 @@ body {
   will-change: auto;
 }
 
+blockquote {
+  border-left: 3px solid var(--color-lighter);
+  font-style: italic;
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--spacing-xs) var(--spacing-sm);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
