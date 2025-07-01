@@ -24,7 +24,7 @@ The whole workflow and setup for me in addition to the above is Google Chrome, w
 - [Workspaces](https://developer.chrome.com/docs/devtools/workspaces) - edit, preview your code on the fly
 - [Mocking](https://developer.chrome.com/blog/devtools-tips-34) & overriding API requests
 
-There are so many things you could adopt for your workspace and I love how the chrome team has put it [all together here](https://developer.chrome.com/docs/devtools/).
+There are so many things you could adopt for your workflow and I love how the chrome team has put it [all together here](https://developer.chrome.com/docs/devtools/).
 
 With every project, task, bug, I have realized that context is KING! Once you contextualize the prompting; refactoring or even just a new feature, the efficiency is unmatched!
 
