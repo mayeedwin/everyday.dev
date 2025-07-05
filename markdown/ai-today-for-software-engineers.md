@@ -35,4 +35,7 @@ In summary, my quick cheat sheet items are;
 - Best practices are important
 - Humanize the prompting
 
+
+> **AI is a multiplier**, and if you multiply bad practices, you get bad results faster
+
 Cheers! Happy & coding!
